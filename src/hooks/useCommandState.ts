@@ -5,6 +5,7 @@ import { Haptics } from '@/lib/haptics'
 import { SpeechService } from '@/services/speechService'
 import { parseCommand } from '@/services/commandParser'
 import { executeCommand, type ExecutorContext } from '@/services/commandExecutor'
+import { logCommand } from '@/services/commandLogger'
 import { useAuth, type StaffMember } from '@/contexts/AuthContext'
 import { useTableSessions } from './useTableSessions'
 import { useEightySix } from './useEightySix'
@@ -102,6 +103,9 @@ export function useCommandState() {
 
     const parsed = parseCommand(transcript)
     const commandResponse = await executeCommand(parsed, ctx)
+
+    // Log every command for training
+    logCommand(parsed, commandResponse, ctx.staff).catch(() => {})
 
     setResponse(commandResponse)
     setShowResponse(true)
