@@ -51,6 +51,7 @@ export async function executeCommand(
     case 'message_kitchen': return messageKitchen(entities, ctx)
     case 'message_manager': return messageManager(entities, ctx)
     case 'order_submit': return orderSubmit(parsed, ctx)
+    case 'ticket_start': return { text: `Ticket started for ${entities.table_number}`, type: 'success', requiresConfirmation: false }
     case 'cancel_order': return { text: 'Order cancelled', type: 'success', requiresConfirmation: false }
     case 'clock_in': return { text: `Clocked in. Have a great shift, ${ctx.staff.name}!`, type: 'success', requiresConfirmation: false }
     case 'clock_out': return { text: 'Clocked out. Good work today!', type: 'success', requiresConfirmation: false }

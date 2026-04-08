@@ -53,3 +53,36 @@ export interface CommandQueueItem {
   response: string | null
   responseType: ResponseType | null
 }
+
+// --- Ticket types ---
+
+export type TicketStatus = 'building' | 'sent' | 'cancelled'
+
+export type OrderType = 'dine_in' | 'to_go'
+
+export type ModifierCategory = 'cook_temp' | 'meat' | 'side' | 'bread'
+
+export interface TicketModifier {
+  text: string
+  category: ModifierCategory
+}
+
+export interface TicketItem {
+  seat: number
+  quantity: number
+  menuItemName: string
+  menuItemPrice: number | null
+  modifiers: TicketModifier[]
+  rawUtterance: string
+}
+
+export interface Ticket {
+  tableNumber: string
+  serverName: string
+  serverId: string
+  guestCount: number
+  orderType: OrderType
+  items: TicketItem[]
+  status: TicketStatus
+  createdAt: string
+}

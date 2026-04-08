@@ -1,6 +1,6 @@
 import { WaveformVisualizer } from './WaveformVisualizer'
 
-type RingState = 'idle' | 'listening' | 'processing'
+type RingState = 'idle' | 'listening' | 'processing' | 'ticket'
 
 interface Props {
   state: RingState
@@ -11,18 +11,20 @@ export function BreathingRing({ state, onTap }: Props) {
   const isIdle = state === 'idle'
   const isListening = state === 'listening'
   const isProcessing = state === 'processing'
+  const isTicket = state === 'ticket'
 
-  const ringSize = isIdle ? 140 : 180
+  const ringSize = isTicket ? 100 : isIdle ? 140 : 180
   const borderWidth = isListening ? 4 : 2
+  const containerSize = isTicket ? 140 : 220
 
   return (
     <div
       className="relative flex items-center justify-center cursor-pointer"
-      style={{ width: 220, height: 220 }}
+      style={{ width: containerSize, height: containerSize }}
       onClick={onTap}
     >
       {/* Glow */}
-      {!isIdle && (
+      {(!isIdle || isTicket) && (
         <div
           className="absolute rounded-full bg-maroon/15 blur-xl transition-opacity duration-300"
           style={{ width: ringSize + 40, height: ringSize + 40 }}
@@ -47,6 +49,11 @@ export function BreathingRing({ state, onTap }: Props) {
         {isIdle && (
           <span className="text-gray text-[13px] uppercase tracking-widest">
             Tap to speak
+          </span>
+        )}
+        {isTicket && (
+          <span className="text-gray text-[11px] uppercase tracking-widest">
+            Next item
           </span>
         )}
         {isListening && <WaveformVisualizer />}

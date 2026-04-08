@@ -3,7 +3,9 @@ export type CommandIntent =
   | 'clear_table' | 'close_out' | 'my_tables' | 'staff_check'
   | 'message_kitchen' | 'message_manager' | 'sales_query'
   | 'eighty_six' | 'un_eighty_six' | 'cancel_order'
-  | 'clock_in' | 'clock_out' | 'unknown'
+  | 'clock_in' | 'clock_out'
+  | 'ticket_start' | 'ticket_item' | 'ticket_send' | 'ticket_cancel'
+  | 'unknown'
 
 export interface ParsedCommand {
   intent: CommandIntent
@@ -90,6 +92,21 @@ type PatternRule = {
 }
 
 const RULES: PatternRule[] = [
+  // Ticket start (must be before seat_table to avoid conflict)
+  {
+    patterns: [
+      `new order (?:for |at )?(?:table )?${TBL}\\b(?:\\s+(\\d+))?`,
+      `new ticket (?:for |at )?(?:table )?${TBL}\\b(?:\\s+(\\d+))?`,
+      `start (?:an? )?order (?:for |at )?(?:table )?${TBL}\\b(?:\\s+(\\d+))?`,
+      `${TBL} new order(?:\\s+(\\d+))?`,
+    ],
+    intent: 'ticket_start',
+    extract: (m, normalized) => {
+      const tbl = extractTable(normalized) || m[1].toUpperCase()
+      return { table_number: tbl, guest_count: m[2] || '2' }
+    },
+    confidence: 0.95,
+  },
   // Exact phrases first
   {
     patterns: ['\\bmy tables\\b', '\\bshow my tables\\b'],
@@ -313,6 +330,10 @@ export function intentDisplayName(intent: CommandIntent): string {
     cancel_order: 'Cancel Order',
     clock_in: 'Clock In',
     clock_out: 'Clock Out',
+    ticket_start: 'Start Ticket',
+    ticket_item: 'Ticket Item',
+    ticket_send: 'Send Ticket',
+    ticket_cancel: 'Cancel Ticket',
     unknown: 'Unknown',
   }
   return names[intent]

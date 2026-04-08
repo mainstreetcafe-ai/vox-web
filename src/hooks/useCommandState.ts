@@ -10,12 +10,14 @@ import { useAuth, type StaffMember } from '@/contexts/AuthContext'
 import { useTableSessions } from './useTableSessions'
 import { useEightySix } from './useEightySix'
 import { useMessages } from './useMessages'
+import { useTicket } from './useTicket'
 
 export function useCommandState() {
   const { staff } = useAuth()
   const { tables, seatTable, clearTable, closeTable } = useTableSessions()
   const { items: eightySixItems, eightySix, unEightySix } = useEightySix()
   const { sendMessage } = useMessages()
+  const ticketHook = useTicket(staff)
 
   const [state, setState] = useState<CommandState>('idle')
   const [transcription, setTranscription] = useState('')
@@ -30,8 +32,10 @@ export function useCommandState() {
   // Keep refs current for async processTranscript
   const staffRef = useRef<StaffMember | null>(staff)
   const ctxRef = useRef<ExecutorContext | null>(null)
+  const ticketRef = useRef(ticketHook)
 
   useEffect(() => { staffRef.current = staff }, [staff])
+  useEffect(() => { ticketRef.current = ticketHook })
   useEffect(() => {
     if (!staff) { ctxRef.current = null; return }
     ctxRef.current = {
@@ -56,13 +60,11 @@ export function useCommandState() {
     service.subscribe(
       (text, isFinal) => {
         if (isFinal) finalTranscriptRef.current = text
-        // Also keep the latest interim in case iOS never sends a final
         latestTranscriptRef.current = text
         setTranscription(text)
       },
       (speechState) => {
         if (speechState === 'idle') {
-          // Use final transcript, or fall back to latest interim (iOS fix)
           const transcript = finalTranscriptRef.current || latestTranscriptRef.current
           if (transcript) {
             processTranscript(transcript)
@@ -105,7 +107,76 @@ export function useCommandState() {
       return
     }
 
+    const t = ticketRef.current
+
+    // --- Ticket mode: route utterances to ticket handler ---
+    if (t.isActive) {
+      const result = t.processUtterance(transcript)
+
+      if (result === 'SEND') {
+        const success = await t.sendTicket(sendMessage)
+        logCommand(
+          { intent: 'ticket_send', entities: {}, confidence: 1, rawTranscript: transcript },
+          { text: success ? 'Order sent' : 'Failed', type: success ? 'success' : 'error', requiresConfirmation: false },
+          ctx.staff,
+        ).catch(() => {})
+
+        if (success) {
+          Haptics.success()
+          setResponse({ text: 'Order sent!', type: 'success', requiresConfirmation: false })
+          setShowResponse(true)
+          setState('responding')
+          dismissTimer.current = setTimeout(dismissResponse, APP_CONFIG.responseDismissMs)
+        } else {
+          Haptics.error()
+          setResponse({ text: 'Failed to send order', type: 'error', requiresConfirmation: false })
+          setShowResponse(true)
+          setState('responding')
+          dismissTimer.current = setTimeout(dismissResponse, APP_CONFIG.responseDismissMs)
+        }
+        return
+      }
+
+      if (result === 'CANCEL') {
+        logCommand(
+          { intent: 'ticket_cancel', entities: {}, confidence: 1, rawTranscript: transcript },
+          { text: 'Order cancelled', type: 'info', requiresConfirmation: false },
+          ctx.staff,
+        ).catch(() => {})
+        Haptics.light()
+        setState('idle')
+        return
+      }
+
+      // Item added/removed/modified -- no response card, ticket view shows the change
+      logCommand(
+        { intent: 'ticket_item', entities: {}, confidence: 1, rawTranscript: transcript },
+        { text: result, type: 'info', requiresConfirmation: false },
+        ctx.staff,
+      ).catch(() => {})
+      Haptics.success()
+      setState('idle')
+      return
+    }
+
+    // --- Normal mode ---
     const parsed = parseCommand(transcript)
+
+    // Intercept ticket_start before executor
+    if (parsed.intent === 'ticket_start') {
+      const table = parsed.entities.table_number
+      const guests = parseInt(parsed.entities.guest_count) || 2
+      t.startTicket(table, guests)
+      logCommand(
+        parsed,
+        { text: `Ticket started: ${table}`, type: 'success', requiresConfirmation: false },
+        ctx.staff,
+      ).catch(() => {})
+      Haptics.success()
+      setState('idle')
+      return
+    }
+
     const commandResponse = await executeCommand(parsed, ctx)
 
     // Log every command for training
@@ -121,7 +192,7 @@ export function useCommandState() {
     if (!commandResponse.requiresConfirmation) {
       dismissTimer.current = setTimeout(dismissResponse, APP_CONFIG.responseDismissMs)
     }
-  }, [dismissResponse])
+  }, [dismissResponse, sendMessage])
 
   const startListening = useCallback(() => {
     setState('listening')
@@ -177,6 +248,14 @@ export function useCommandState() {
     confirmAction,
     cancelAction,
     dismissResponse,
+    // Ticket
+    ticket: ticketHook.ticket,
+    ticketActive: ticketHook.isActive,
+    ticketStatus: ticketHook.statusText,
+    cancelTicket: ticketHook.cancelTicket,
+    sendTicket: useCallback(async () => {
+      return ticketHook.sendTicket(sendMessage)
+    }, [ticketHook.sendTicket, sendMessage]),
   }
 }
 
