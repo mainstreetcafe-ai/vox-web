@@ -25,6 +25,7 @@ export function useCommandState() {
   const dismissTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const speechRef = useRef<SpeechService | null>(null)
   const finalTranscriptRef = useRef('')
+  const latestTranscriptRef = useRef('')
 
   // Keep refs current for async processTranscript
   const staffRef = useRef<StaffMember | null>(staff)
@@ -55,11 +56,14 @@ export function useCommandState() {
     service.subscribe(
       (text, isFinal) => {
         if (isFinal) finalTranscriptRef.current = text
+        // Also keep the latest interim in case iOS never sends a final
+        latestTranscriptRef.current = text
         setTranscription(text)
       },
       (speechState) => {
         if (speechState === 'idle') {
-          const transcript = finalTranscriptRef.current
+          // Use final transcript, or fall back to latest interim (iOS fix)
+          const transcript = finalTranscriptRef.current || latestTranscriptRef.current
           if (transcript) {
             processTranscript(transcript)
           } else {
@@ -125,6 +129,7 @@ export function useCommandState() {
     setResponse(null)
     setShowResponse(false)
     finalTranscriptRef.current = ''
+    latestTranscriptRef.current = ''
     Haptics.light()
 
     if (speechRef.current?.isSupported) {
