@@ -121,16 +121,25 @@ const RULES: PatternRule[] = [
     extract: () => ({}),
     confidence: 0.9,
   },
-  // Order with table
+  // Order with table (items first or table first)
   {
     patterns: [
       `order (.+) for (?:table )?${TBL}`,
       `can i get (.+) for (?:table )?${TBL}`,
       `i need (.+) for (?:table )?${TBL}`,
       `send (.+) to (?:table )?${TBL}`,
+      `(?:table )?${TBL} (?:wants|needs|ordered|gets) (.+)`,
     ],
     intent: 'order_submit',
-    extract: (m) => ({ items: m[1], table_number: m[2].toUpperCase() }),
+    extract: (m) => {
+      // "B1 wants three coffees" → m[1]=b1, m[2]=three coffees
+      // "order chicken for B1" → m[1]=chicken, m[2]=b1
+      const tbl = extractTable(m[1]) || extractTable(m[2])
+      if (tbl && extractTable(m[1])) {
+        return { table_number: tbl, items: m[2] }
+      }
+      return { items: m[1], table_number: (m[2] || '').toUpperCase() }
+    },
     confidence: 0.9,
   },
   // Table status
@@ -192,11 +201,15 @@ const RULES: PatternRule[] = [
   // Menu lookup
   {
     patterns: [
-      "what'?s the (.+)",
-      'what is the (.+)',
-      'tell me about the (.+)',
-      'describe the (.+)',
-      'how much is the (.+)',
+      "what'?s (?:on |in )?the (.+)",
+      'what is (?:on |in )?the (.+)',
+      'tell me about (?:the )?(.+)',
+      'describe (?:the )?(.+)',
+      'how much is (?:the )?(.+)',
+      'what comes with (?:the )?(.+)',
+      'what does the (.+) come with',
+      'do we have (.+)',
+      'is the (.+) available',
     ],
     intent: 'menu_lookup',
     extract: (m) => ({ item_name: m[1] }),
