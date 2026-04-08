@@ -41,12 +41,14 @@ export function MainContainer() {
 
   return (
     <div className="h-full flex flex-col bg-bg" {...handlers}>
-      {/* Top bar */}
-      <div className="pt-2 shrink-0">
+      {/* Top bar -- padded below Dynamic Island */}
+      <div className="pt-[env(safe-area-inset-top,20px)] shrink-0">
+        <div className="pt-2">
         <PageIndicator pageCount={3} currentPage={page} />
         {!isOnline && (
           <p className="text-warning text-[10px] text-center mt-1">Offline</p>
         )}
+        </div>
       </div>
 
       {/* Swipe container */}

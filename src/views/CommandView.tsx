@@ -18,35 +18,38 @@ export function CommandView() {
     : 'idle'
 
   return (
-    <div className="h-full flex flex-col items-center justify-center relative px-4">
+    <div className="h-full flex flex-col items-center relative px-4">
       {/* Speech support warning */}
       {!cmd.speechSupported && cmd.state === 'idle' && (
-        <p className="text-gray-dim text-xs mb-4 absolute top-4">
+        <p className="text-gray-dim text-xs absolute top-4">
           Speech not supported -- using demo mode
         </p>
       )}
 
-      {/* Transcription */}
-      {(cmd.state === 'listening' || cmd.state === 'processing') && (
-        <p
-          className={`text-xl text-center mb-6 transition-opacity duration-300 min-h-[28px] max-w-[90%] ${
-            cmd.state === 'processing' ? 'opacity-50' : 'opacity-100'
-          }`}
-        >
-          {cmd.transcription || '\u00A0'}
-        </p>
-      )}
+      {/* Center section: transcription + ring */}
+      <div className="flex-1 flex flex-col items-center justify-center">
+        {/* Transcription */}
+        {(cmd.state === 'listening' || cmd.state === 'processing') && (
+          <p
+            className={`text-xl text-center mb-6 transition-opacity duration-300 min-h-[28px] max-w-[90%] ${
+              cmd.state === 'processing' ? 'opacity-50' : 'opacity-100'
+            }`}
+          >
+            {cmd.transcription || '\u00A0'}
+          </p>
+        )}
 
-      {cmd.state === 'processing' && (
-        <p className="text-gray text-[13px] mb-2">Processing...</p>
-      )}
+        {cmd.state === 'processing' && (
+          <p className="text-gray text-[13px] mb-2">Processing...</p>
+        )}
 
-      {/* Ring */}
-      <BreathingRing state={ringState} onTap={handleRingTap} />
+        {/* Ring */}
+        <BreathingRing state={ringState} onTap={handleRingTap} />
+      </div>
 
       {/* Wordmark */}
       <p
-        className="text-gray-dim/40 text-base tracking-[6px] uppercase mt-auto mb-8"
+        className="text-gray-dim/40 text-base tracking-[6px] uppercase mb-8"
         style={{ fontFamily: "'SF Pro Rounded', -apple-system, system-ui, sans-serif", fontWeight: 300 }}
       >
         VOX
