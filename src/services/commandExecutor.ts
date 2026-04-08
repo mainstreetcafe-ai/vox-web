@@ -26,9 +26,13 @@ export async function executeCommand(
   const { intent, entities, confidence } = parsed
 
   if (intent === 'unknown' || confidence < 0.5) {
+    // Post unrecognized speech to feed so nothing gets lost
+    await ctx.onSendMessage(ctx.staff.name, parsed.rawTranscript, 'info')
+    postToWebhook('unrecognized', { message: parsed.rawTranscript }, ctx).catch(() => {})
+
     return {
-      text: `I didn't understand that. Try "Seat B5 party of 4" or "What's the potato chip chicken?"`,
-      type: 'error',
+      text: `Posted to feed: "${parsed.rawTranscript}"`,
+      type: 'info',
       requiresConfirmation: false,
     }
   }
