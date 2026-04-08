@@ -198,7 +198,7 @@ const RULES: PatternRule[] = [
     extract: (m) => ({ table_number: m[1].toUpperCase() }),
     confidence: 0.9,
   },
-  // Menu lookup
+  // Menu lookup (patterns from 1,013 real call transcripts)
   {
     patterns: [
       "what'?s (?:on |in )?the (.+)",
@@ -209,7 +209,12 @@ const RULES: PatternRule[] = [
       'what comes with (?:the )?(.+)',
       'what does the (.+) come with',
       'do we have (.+)',
+      'do we still have (.+)',
+      'do you guys have (.+)',
       'is the (.+) available',
+      'is there (.+) today',
+      'what kind of (.+) do we have',
+      'how many sides (?:does |do )(?:the )?(.+) (?:come with|get)',
     ],
     intent: 'menu_lookup',
     extract: (m) => ({ item_name: m[1] }),
