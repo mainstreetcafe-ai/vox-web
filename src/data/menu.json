@@ -1,0 +1,1136 @@
+[
+  {
+    "name": "Catfish & Eggs",
+    "category": "eggs-and-such",
+    "price": 13.99,
+    "description": "Crispy, golden-fried catfish fillet paired with two eggs your way, one side, and your choice of bread. Wild-caught Alaba"
+  },
+  {
+    "name": "Chicken Fried Chicken & Eggs",
+    "category": "eggs-and-such",
+    "price": 13.75,
+    "description": "Hand-breaded chicken fried to perfection, served with two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "Chicken Fried Steak & Eggs",
+    "category": "eggs-and-such",
+    "price": 13.99,
+    "description": "Tender chicken fried steak topped with creamy gravy, paired with two eggs your way, one side, and your choice of bread. "
+  },
+  {
+    "name": "Corned Beef & Eggs",
+    "category": "eggs-and-such",
+    "price": 11.5,
+    "description": "Savory corned beef hash served alongside two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "Egg Special",
+    "category": "eggs-and-such",
+    "price": 11.5,
+    "description": "Two eggs cooked your way, served with your choice of bacon or sausage, one side, and your choice of bread. Simple breakf"
+  },
+  {
+    "name": "Grilled Chicken Breast & Eggs",
+    "category": "eggs-and-such",
+    "price": 12.75,
+    "description": "Juicy grilled chicken breast served with two eggs your way, one side, and your choice of bread. A healthier breakfast op"
+  },
+  {
+    "name": "Ham & Eggs",
+    "category": "eggs-and-such",
+    "price": 12.5,
+    "description": "Thick-cut ham served alongside two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "Hamburger Steak & Eggs",
+    "category": "eggs-and-such",
+    "price": 13.5,
+    "description": "Perfectly seasoned hamburger steak paired with two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "PCC & Eggs",
+    "category": "eggs-and-such",
+    "price": 16.99,
+    "description": "Tender and flavorful potato chip chicken served with two eggs your way, one side, and your choice of bread. A Main Stree"
+  },
+  {
+    "name": "One Pork Chop & Eggs",
+    "category": "eggs-and-such",
+    "price": 14.5,
+    "description": "One juicy, grilled pork chop served alongside two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "Two Pork Chops & Eggs",
+    "category": "eggs-and-such",
+    "price": 17.99,
+    "description": "Two grilled pork chops paired with two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "Sirloin Steak & Eggs",
+    "category": "eggs-and-such",
+    "price": 16.99,
+    "description": "Tender sirloin steak cooked to your liking, paired with two eggs your way, one side, and your choice of bread."
+  },
+  {
+    "name": "Eggs Benedict",
+    "category": "eggs-and-such",
+    "price": 12.99,
+    "description": "Toasted English muffin with ham, two poached eggs, and hollandaise sauce. Served with one breakfast side."
+  },
+  {
+    "name": "Bacon & Cheese Omelette",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Fluffy omelette filled with crispy bacon and melted cheese. Served with a side and your choice of bread."
+  },
+  {
+    "name": "Cheese Omelet",
+    "category": "omelettes",
+    "price": 10.5,
+    "description": "Simple and satisfying classic omelette filled with melted cheese. Served with a side and your choice of bread."
+  },
+  {
+    "name": "Farmers Omelet",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Packed with choice of bacon or sausage, hash browns, fresh tomatoes, and melted cheese. A hearty start to your day."
+  },
+  {
+    "name": "Ham & Cheese Omelette",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Savory omelette stuffed with tender ham and melted cheese. Served with a side and your choice of bread."
+  },
+  {
+    "name": "Omelette",
+    "category": "omelettes",
+    "price": 6.99,
+    "description": "Plain, fluffy omelette cooked to perfection. Add your choice of toppings and fillings."
+  },
+  {
+    "name": "Sausage & Cheese Omelette",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Hearty omelette packed with savory sausage and melted cheese. Served with a side and your choice of bread."
+  },
+  {
+    "name": "Spanish Omelet",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Flavorful omelet packed with seasoned taco meat, fresh tomatoes, and melted cheese. A Tex-Mex breakfast favorite."
+  },
+  {
+    "name": "Veggie Omelet",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Wholesome omelet with fresh tomatoes, onions, mushrooms, bell peppers, and melted cheese. A vegetarian favorite."
+  },
+  {
+    "name": "Western Omelet",
+    "category": "omelettes",
+    "price": 12.5,
+    "description": "Bold omelette filled with diced ham, sautéed onions, bell peppers, and cheese. A breakfast classic."
+  },
+  {
+    "name": "Buttermilk Pancake",
+    "category": "pancakes-waffles-french-toast",
+    "price": 3.75,
+    "description": "Classic, fluffy buttermilk pancake served hot off the griddle with butter and syrup."
+  },
+  {
+    "name": "Chicken & Waffles",
+    "category": "pancakes-waffles-french-toast",
+    "price": 12.99,
+    "description": "Crispy fried chicken paired with a fluffy waffle and two eggs, served with butter and syrup. A Southern brunch favorite!"
+  },
+  {
+    "name": "French Toast",
+    "category": "pancakes-waffles-french-toast",
+    "price": 9.99,
+    "description": "Six thick slices of golden, fluffy French toast topped with powdered sugar. A sweet breakfast classic."
+  },
+  {
+    "name": "Half French Toast",
+    "category": "pancakes-waffles-french-toast",
+    "price": 6.99,
+    "description": "Four slices of golden, fluffy French toast topped with powdered sugar. Perfect smaller portion."
+  },
+  {
+    "name": "Pancake Special",
+    "category": "pancakes-waffles-french-toast",
+    "price": 11.5,
+    "description": "Two fluffy buttermilk pancakes served with eggs and choice of bacon or sausage. A complete breakfast!"
+  },
+  {
+    "name": "Waffle",
+    "category": "pancakes-waffles-french-toast",
+    "price": 5.5,
+    "description": "Golden, fluffy waffle cooked to perfection and served with butter and syrup."
+  },
+  {
+    "name": "French Toast Special",
+    "category": "pancakes-waffles-french-toast",
+    "price": 11.5,
+    "description": "Three slices of French toast topped with powdered sugar, served with two eggs and choice of bacon or sausage."
+  },
+  {
+    "name": "Waffle Special",
+    "category": "pancakes-waffles-french-toast",
+    "price": 11.5,
+    "description": "Golden waffle served with two eggs and choice of bacon or sausage, topped with powdered sugar, butter and syrup."
+  },
+  {
+    "name": "Breakfast Tacos",
+    "category": "house-specialties",
+    "price": 9.5,
+    "description": "Pair of soft tortillas filled with scrambled eggs, choice of bacon or sausage, and shredded cheese. Served with homemade"
+  },
+  {
+    "name": "Burrito",
+    "category": "house-specialties",
+    "price": 6.5,
+    "description": "Hearty breakfast burrito stuffed with scrambled eggs, potatoes, and cheese in a warm tortilla."
+  },
+  {
+    "name": "Huevos Rancheros",
+    "category": "house-specialties",
+    "price": 12.99,
+    "description": "Two eggs scrambled with ground beef, hash browns, jalapeños, onions, and melted cheese on corn or flour tortillas. Serve"
+  },
+  {
+    "name": "Mexican Scrambler",
+    "category": "house-specialties",
+    "price": 13.5,
+    "description": "Spicy blend of scrambled eggs with chorizo, jalapeños, onions, tomatoes, and melted cheese. Served with tortillas and ho"
+  },
+  {
+    "name": "Migas",
+    "category": "house-specialties",
+    "price": 10.99,
+    "description": "Scrambled eggs mixed with cut-up tortilla, onions, and melted cheese. Served with choice of potato and homemade salsa."
+  },
+  {
+    "name": "Texas Scrambler",
+    "category": "house-specialties",
+    "price": 13.5,
+    "description": "Two eggs scrambled with ham, bacon, sausage, hash browns, onions, bell peppers, and cheese. Served with toast or tortill"
+  },
+  {
+    "name": "Quesadilla",
+    "category": "house-specialties",
+    "price": 13.5,
+    "description": "Grilled flour tortilla filled with scrambled eggs, onions, hash browns, cheese, and choice of bacon or sausage. Served w"
+  },
+  {
+    "name": "Chilaquiles",
+    "category": "house-specialties",
+    "price": 12.99,
+    "description": "Crispy tortilla chips in green salsa, topped with two eggs, refried beans, sour cream, fresco cheese, and avocado. Serve"
+  },
+  {
+    "name": "Ray Special",
+    "category": "house-specialties",
+    "price": 12.99,
+    "description": "Roasted potatoes, bell peppers, chorizo, and melted cheese, topped with two over-medium eggs. Served with toast or torti"
+  },
+  {
+    "name": "Blackened Redfish",
+    "category": "entrees",
+    "price": 18.5,
+    "description": "Grilled redfish with homemade crab sauce, served over dirty rice and one other side."
+  },
+  {
+    "name": "Catfish",
+    "category": "entrees",
+    "price": 14.99,
+    "description": "Hand-breaded catfish fillets fried to golden crisp. Served with two sides, tartar sauce, and French bread."
+  },
+  {
+    "name": "Chicken Strips",
+    "category": "entrees",
+    "price": 13.99,
+    "description": "Three pieces of hand-battered fried chicken strips with two sides and French bread."
+  },
+  {
+    "name": "Country Fried Chicken",
+    "category": "entrees",
+    "price": 13.99,
+    "description": "Hand-breaded chicken breast fried and topped with gravy. Served with two sides and French bread."
+  },
+  {
+    "name": "Country Fried Steak",
+    "category": "entrees",
+    "price": 14.5,
+    "description": "Hand-breaded beef steak fried and topped with gravy. Served with two sides and French bread."
+  },
+  {
+    "name": "Grilled Chicken Breast",
+    "category": "entrees",
+    "price": 13.99,
+    "description": "Juicy, marinated chicken breast grilled to perfection with two sides and French bread."
+  },
+  {
+    "name": "Hamburger Steak",
+    "category": "entrees",
+    "price": 14.5,
+    "description": "Hamburger steak with sautéed onions, mushrooms, and brown gravy. Served with two sides and French bread."
+  },
+  {
+    "name": "Potato Chip Chicken",
+    "category": "entrees",
+    "price": 15.99,
+    "description": "Chicken breast in potato chip crust with onion sauce. Served with two sides. A Main Street Cafe signature!"
+  },
+  {
+    "name": "Ribeye Steak",
+    "category": "entrees",
+    "price": 21.99,
+    "description": "Hand-cut, grilled ribeye with two sides and French bread. Our premium steak offering."
+  },
+  {
+    "name": "Sirloin Steak",
+    "category": "entrees",
+    "price": 18.5,
+    "description": "Flavorful sirloin steak with two sides and French bread."
+  },
+  {
+    "name": "Sirloin Steak & Shrimp",
+    "category": "entrees",
+    "price": 22.99,
+    "description": "Sirloin steak with grilled shrimp, two sides, and French bread. The best of land and sea!"
+  },
+  {
+    "name": "Tropical Salmon",
+    "category": "entrees",
+    "price": 17.99,
+    "description": "Honey chipotle-glazed salmon over rice pilaf with fruit salsa and one additional side."
+  },
+  {
+    "name": "Veggie Plate",
+    "category": "entrees",
+    "price": 13.99,
+    "description": "Choice of three sides with dinner salad and French bread. A vegetarian-friendly option."
+  },
+  {
+    "name": "Bacon Cheeseburger",
+    "category": "sandwiches",
+    "price": 11.99,
+    "description": "Beef patty with bacon, cheese, lettuce, tomato, and onion on a toasted bun. Served with choice of side."
+  },
+  {
+    "name": "Sinful Chicken Sandwich",
+    "category": "sandwiches",
+    "price": 12.99,
+    "description": "Potato chip-crusted chicken with Swiss cheese, bacon, avocado, lettuce, tomato, and mayo on a toasted bun. Our signature"
+  },
+  {
+    "name": "Cheesecake",
+    "category": "desserts",
+    "price": 5.5,
+    "description": "Rich and creamy New York-style cheesecake with graham cracker crust."
+  },
+  {
+    "name": "Chocolate Pie",
+    "category": "desserts",
+    "price": 4.99,
+    "description": "Silky chocolate filling in flaky crust with toasted meringue. Made fresh daily."
+  },
+  {
+    "name": "Coconut Pie",
+    "category": "desserts",
+    "price": 4.99,
+    "description": "Sweet coconut custard in buttery crust with toasted coconut and meringue."
+  },
+  {
+    "name": "Lemon Pie",
+    "category": "desserts",
+    "price": 4.99,
+    "description": "Buttery crust with zesty lemon curd and toasted meringue. Refreshingly tart!"
+  },
+  {
+    "name": "Hot Apple Pie & Ice Cream",
+    "category": "desserts",
+    "price": 7.99,
+    "description": "Warm apple pie with cinnamon-spiced apples and vanilla ice cream."
+  },
+  {
+    "name": "Hot Fudge Brownie & Ice Cream",
+    "category": "desserts",
+    "price": 6.5,
+    "description": "Warm brownie with vanilla ice cream and hot fudge sauce."
+  },
+  {
+    "name": "Ice Cream",
+    "category": "desserts",
+    "price": 4,
+    "description": "Two scoops of creamy vanilla ice cream."
+  },
+  {
+    "name": "Biscuit (1)",
+    "category": "breakfast-sides",
+    "price": 0.99,
+    "description": "One fresh-baked buttermilk biscuit, golden and flaky."
+  },
+  {
+    "name": "Biscuits (2)",
+    "category": "breakfast-sides",
+    "price": 1.99,
+    "description": "Two fresh-baked buttermilk biscuits, golden and flaky."
+  },
+  {
+    "name": "Biscuit & Gravy (1)",
+    "category": "breakfast-sides",
+    "price": 2.5,
+    "description": "One biscuit topped with our homemade cream gravy."
+  },
+  {
+    "name": "Biscuits & Gravy (2)",
+    "category": "breakfast-sides",
+    "price": 3.5,
+    "description": "Two biscuits topped with our homemade cream gravy."
+  },
+  {
+    "name": "Toast (1 Slice)",
+    "category": "breakfast-sides",
+    "price": 0.99,
+    "description": "One slice of toast with your choice of bread."
+  },
+  {
+    "name": "Toast (2 Slices)",
+    "category": "breakfast-sides",
+    "price": 2.25,
+    "description": "Two slices of toast with your choice of bread."
+  },
+  {
+    "name": "Bacon",
+    "category": "breakfast-sides",
+    "price": 3.5,
+    "description": "Crispy strip bacon, perfectly cooked."
+  },
+  {
+    "name": "Sausage",
+    "category": "breakfast-sides",
+    "price": 3.5,
+    "description": "Savory breakfast sausage patties or links."
+  },
+  {
+    "name": "Sausage (1 Patty)",
+    "category": "breakfast-sides",
+    "price": 1.75,
+    "description": "One savory breakfast sausage patty."
+  },
+  {
+    "name": "Ham",
+    "category": "breakfast-sides",
+    "price": 4.5,
+    "description": "Thick-cut ham steak, grilled to perfection."
+  },
+  {
+    "name": "Chorizo",
+    "category": "breakfast-sides",
+    "price": 3.5,
+    "description": "Spicy Mexican chorizo, crumbled and cooked."
+  },
+  {
+    "name": "Egg",
+    "category": "breakfast-sides",
+    "price": 1.5,
+    "description": "Single farm-fresh egg cooked any style."
+  },
+  {
+    "name": "Hashbrowns",
+    "category": "breakfast-sides",
+    "price": 2.99,
+    "description": "Crispy shredded potatoes, golden and delicious."
+  },
+  {
+    "name": "Roasted Potatoes",
+    "category": "breakfast-sides",
+    "price": 2.99,
+    "description": "Seasoned breakfast potatoes, roasted to perfection."
+  },
+  {
+    "name": "Grits (Small)",
+    "category": "breakfast-sides",
+    "price": 3.75,
+    "description": "Creamy Southern-style grits, small portion."
+  },
+  {
+    "name": "Grits (Large)",
+    "category": "breakfast-sides",
+    "price": 5.99,
+    "description": "Large bowl of creamy Southern-style grits."
+  },
+  {
+    "name": "Oatmeal (Small)",
+    "category": "breakfast-sides",
+    "price": 5.25,
+    "description": "Steel-cut oatmeal, small portion."
+  },
+  {
+    "name": "Oatmeal (Large)",
+    "category": "breakfast-sides",
+    "price": 5.99,
+    "description": "Large bowl of steel-cut oatmeal."
+  },
+  {
+    "name": "Fruit Cup",
+    "category": "breakfast-sides",
+    "price": 3.25,
+    "description": "Fresh seasonal fruit, perfect for a healthy start."
+  },
+  {
+    "name": "Tomato Slices",
+    "category": "breakfast-sides",
+    "price": 2.5,
+    "description": "Fresh sliced tomatoes, a healthy side option."
+  },
+  {
+    "name": "Avocado Slices",
+    "category": "breakfast-sides",
+    "price": 3.25,
+    "description": "Fresh sliced avocado, creamy and delicious."
+  },
+  {
+    "name": "English Muffin",
+    "category": "breakfast-sides",
+    "price": 2.25,
+    "description": "Toasted English muffin with butter."
+  },
+  {
+    "name": "Chips",
+    "category": "appetizers",
+    "price": 3.5,
+    "description": "Crispy tortilla chips, perfect for snacking."
+  },
+  {
+    "name": "Chips & Salsa",
+    "category": "appetizers",
+    "price": 6.5,
+    "description": "Crispy tortilla chips with our famous homemade salsa."
+  },
+  {
+    "name": "Chips & Queso",
+    "category": "appetizers",
+    "price": 7.5,
+    "description": "Crispy tortilla chips with warm, creamy queso dip."
+  },
+  {
+    "name": "Fried Pickles",
+    "category": "appetizers",
+    "price": 7.75,
+    "description": "Tangy pickles fried to golden perfection with ranch dressing."
+  },
+  {
+    "name": "Fried Mushrooms",
+    "category": "appetizers",
+    "price": 7.75,
+    "description": "Button mushrooms fried to golden perfection with ranch dressing."
+  },
+  {
+    "name": "Fried Squash",
+    "category": "appetizers",
+    "price": 7.75,
+    "description": "Yellow squash lightly seasoned and fried until golden."
+  },
+  {
+    "name": "Nachos",
+    "category": "appetizers",
+    "price": 11.5,
+    "description": "Crispy tortilla chips loaded with meat, beans, cheese, and all the toppings."
+  },
+  {
+    "name": "PCC Strips",
+    "category": "appetizers",
+    "price": 9.75,
+    "description": "Crispy chicken strips coated in crushed potato chips."
+  },
+  {
+    "name": "Ham Steak",
+    "category": "entrees",
+    "price": 14.5,
+    "description": "Thick-cut grilled ham steak served with two sides and French bread."
+  },
+  {
+    "name": "Pork Chop (1)",
+    "category": "entrees",
+    "price": 14.5,
+    "description": "One bone-in pork chop grilled to perfection. Served with two sides."
+  },
+  {
+    "name": "Pork Chops (2)",
+    "category": "entrees",
+    "price": 17.99,
+    "description": "Two bone-in pork chops grilled to perfection. Served with two sides."
+  },
+  {
+    "name": "Open-Faced Roast Beef",
+    "category": "entrees",
+    "price": 13.99,
+    "description": "Slow-roasted beef over Texas toast, smothered in brown gravy. Served with two sides."
+  },
+  {
+    "name": "Veracruz Tilapia",
+    "category": "entrees",
+    "price": 15.99,
+    "description": "Grilled tilapia topped with avocado lemon cream sauce. Served with two sides."
+  },
+  {
+    "name": "Fried Shrimp",
+    "category": "entrees",
+    "price": 17.99,
+    "description": "Hand-battered Gulf shrimp fried to golden perfection. Served with two sides."
+  },
+  {
+    "name": "Grilled Shrimp",
+    "category": "entrees",
+    "price": 18.99,
+    "description": "Seasoned Gulf shrimp grilled to perfection. Served with two sides."
+  },
+  {
+    "name": "Southwest Chicken",
+    "category": "entrees",
+    "price": 12.5,
+    "description": "Grilled chicken breast with Southwest spices, topped with cheese and pico. Served with two sides."
+  },
+  {
+    "name": "Fajita Plate",
+    "category": "entrees",
+    "price": 14.99,
+    "description": "Sizzling steak or chicken fajitas with grilled peppers and onions. Served with tortillas, rice, and beans."
+  },
+  {
+    "name": "Jalapeño Catfish",
+    "category": "entrees",
+    "price": 15.99,
+    "description": "Catfish with jalapeño crust topped with fresh pico de gallo. Served with two sides."
+  },
+  {
+    "name": "Jalapeño Chicken",
+    "category": "entrees",
+    "price": 15.99,
+    "description": "Grilled chicken topped with cheese, jalapeños, and avocado cream. Served with two sides."
+  },
+  {
+    "name": "BBQ Brisket Sandwich",
+    "category": "sandwiches",
+    "price": 11.5,
+    "description": "Slow-roasted brisket with tangy BBQ sauce on a toasted bun. Served with one side."
+  },
+  {
+    "name": "BLT Sandwich",
+    "category": "sandwiches",
+    "price": 10.5,
+    "description": "Crispy bacon, fresh lettuce, and tomato with mayo on toasted bread. Served with one side."
+  },
+  {
+    "name": "Cheeseburger",
+    "category": "sandwiches",
+    "price": 10.99,
+    "description": "Juicy beef patty with American cheese and fresh toppings. Served with one side."
+  },
+  {
+    "name": "Hamburger",
+    "category": "sandwiches",
+    "price": 10.5,
+    "description": "Juicy beef patty with fresh toppings on a toasted bun. Served with one side."
+  },
+  {
+    "name": "Chicken Salad Sandwich",
+    "category": "sandwiches",
+    "price": 11.5,
+    "description": "Homemade chicken salad on your choice of bread. Served with one side."
+  },
+  {
+    "name": "Club Sandwich",
+    "category": "sandwiches",
+    "price": 11.99,
+    "description": "Triple-decker with turkey, ham, bacon, lettuce, tomato, and mayo. Served with one side."
+  },
+  {
+    "name": "Country Fried Steak Sandwich",
+    "category": "sandwiches",
+    "price": 12.75,
+    "description": "Hand-breaded country fried steak on a toasted bun with cream gravy. Served with one side."
+  },
+  {
+    "name": "Cowboy Sandwich",
+    "category": "sandwiches",
+    "price": 12.5,
+    "description": "Crispy country fried chicken with jalapeños and pepper jack cheese. Served with one side."
+  },
+  {
+    "name": "Grilled Chicken Sandwich",
+    "category": "sandwiches",
+    "price": 11.99,
+    "description": "Grilled chicken breast with bacon and Swiss cheese on a toasted bun. Served with one side."
+  },
+  {
+    "name": "Grilled Ham & Cheese",
+    "category": "sandwiches",
+    "price": 9.99,
+    "description": "Grilled ham with melted American cheese on Texas toast. Served with one side."
+  },
+  {
+    "name": "Grilled Turkey & Swiss",
+    "category": "sandwiches",
+    "price": 9.99,
+    "description": "Grilled turkey with melted Swiss cheese on Texas toast. Served with one side."
+  },
+  {
+    "name": "Patty Melt",
+    "category": "sandwiches",
+    "price": 10.99,
+    "description": "Juicy beef patty with grilled onions and Swiss cheese on rye bread. Served with one side."
+  },
+  {
+    "name": "Tuna Salad Sandwich",
+    "category": "sandwiches",
+    "price": 11.5,
+    "description": "Homemade tuna salad on your choice of bread. Served with one side."
+  },
+  {
+    "name": "Catfish Sandwich",
+    "category": "sandwiches",
+    "price": 11.5,
+    "description": "Hand-breaded catfish fillet on a toasted bun with tartar sauce. Served with one side."
+  },
+  {
+    "name": "Double Meat Hamburger",
+    "category": "sandwiches",
+    "price": 12.5,
+    "description": "Two juicy beef patties with fresh toppings. Served with one side."
+  },
+  {
+    "name": "Double Meat Cheeseburger",
+    "category": "sandwiches",
+    "price": 13.5,
+    "description": "Two juicy beef patties with double American cheese. Served with one side."
+  },
+  {
+    "name": "Double Meat Bacon Cheeseburger",
+    "category": "sandwiches",
+    "price": 13.99,
+    "description": "Two beef patties, double cheese, and crispy bacon. Served with one side."
+  },
+  {
+    "name": "Dinner Salad",
+    "category": "soup-and-salad",
+    "price": 6.5,
+    "description": "Fresh lettuce with carrot, tomato, and onion. Your choice of dressing."
+  },
+  {
+    "name": "Side Salad",
+    "category": "soup-and-salad",
+    "price": 5.5,
+    "description": "Small house salad with fresh vegetables and your choice of dressing."
+  },
+  {
+    "name": "Chef Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Fresh greens topped with ham, turkey, egg, and shredded cheese."
+  },
+  {
+    "name": "Grilled Chicken Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Fresh greens topped with grilled chicken breast and fresh vegetables."
+  },
+  {
+    "name": "Buffalo Chicken Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Crispy buffalo chicken strips on fresh greens with blue cheese crumbles."
+  },
+  {
+    "name": "Chicken Salad Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Our homemade chicken salad served on a bed of fresh greens."
+  },
+  {
+    "name": "Tuna Salad Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Our homemade tuna salad served on a bed of fresh greens."
+  },
+  {
+    "name": "Avocado Chicken Salad",
+    "category": "soup-and-salad",
+    "price": 13.99,
+    "description": "Crispy potato chip chicken with fresh avocado on mixed greens."
+  },
+  {
+    "name": "Luci Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Fresh greens with avocado, mushrooms, and crispy tortilla strips."
+  },
+  {
+    "name": "Taco Salad",
+    "category": "soup-and-salad",
+    "price": 12.5,
+    "description": "Seasoned taco meat in a crispy tortilla shell with all the toppings."
+  },
+  {
+    "name": "Salmon Salad",
+    "category": "soup-and-salad",
+    "price": 16.99,
+    "description": "Honey glazed salmon on a bed of fresh spinach with walnuts and cranberries."
+  },
+  {
+    "name": "Shrimp Salad",
+    "category": "soup-and-salad",
+    "price": 16.99,
+    "description": "Honey glazed shrimp on a bed of fresh spinach with walnuts and cranberries."
+  },
+  {
+    "name": "Veggie Beef Soup (Cup)",
+    "category": "soup-and-salad",
+    "price": 5.5,
+    "description": "Hearty homemade soup with ground beef and seasonal vegetables. Served with cornbread."
+  },
+  {
+    "name": "Veggie Beef Soup (Bowl)",
+    "category": "soup-and-salad",
+    "price": 10.99,
+    "description": "Large bowl of hearty homemade soup with ground beef and seasonal vegetables. Served with cornbread."
+  },
+  {
+    "name": "Catfish (Kids)",
+    "category": "kids-menu",
+    "price": 8.99,
+    "description": "Hand-breaded catfish strips for kids, served with one side."
+  },
+  {
+    "name": "Chicken Strips (Kids)",
+    "category": "kids-menu",
+    "price": 8.5,
+    "description": "Crispy chicken strips for kids, served with one side."
+  },
+  {
+    "name": "Egg Sandwich (Kids)",
+    "category": "kids-menu",
+    "price": 6.5,
+    "description": "Egg with bacon or sausage and cheese on toast for kids."
+  },
+  {
+    "name": "Grilled Cheese (Kids)",
+    "category": "kids-menu",
+    "price": 7.5,
+    "description": "Classic grilled cheese sandwich for kids, served with one side."
+  },
+  {
+    "name": "Mini Egg Special (Kids)",
+    "category": "kids-menu",
+    "price": 7.99,
+    "description": "One egg, half portion of potatoes, choice of meat, and bread."
+  },
+  {
+    "name": "Mini Pancake Special (Kids)",
+    "category": "kids-menu",
+    "price": 7.99,
+    "description": "One pancake with one egg and choice of bacon or sausage."
+  },
+  {
+    "name": "Smiley Pancakes (Kids)",
+    "category": "kids-menu",
+    "price": 6.5,
+    "description": "Fun smiley face pancakes that kids love!"
+  },
+  {
+    "name": "French Fries",
+    "category": "sides",
+    "price": 3.75,
+    "description": "Golden, crispy French fries."
+  },
+  {
+    "name": "Sweet Potato Fries",
+    "category": "sides",
+    "price": 3.75,
+    "description": "Crispy sweet potato fries with a hint of sweetness."
+  },
+  {
+    "name": "Home Chips",
+    "category": "sides",
+    "price": 3.75,
+    "description": "Thick-cut homemade potato chips, lightly salted."
+  },
+  {
+    "name": "Onion Rings",
+    "category": "sides",
+    "price": 3.75,
+    "description": "Golden, crispy onion rings."
+  },
+  {
+    "name": "Tater Tots",
+    "category": "sides",
+    "price": 3.75,
+    "description": "Golden, crispy tater tots."
+  },
+  {
+    "name": "Potato Chips",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Classic crispy potato chips."
+  },
+  {
+    "name": "Mashed Potatoes & Gravy",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Creamy mashed potatoes topped with rich brown gravy."
+  },
+  {
+    "name": "Mashed Potatoes (Dry)",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Creamy mashed potatoes without gravy."
+  },
+  {
+    "name": "Cole Slaw",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Creamy homemade cole slaw."
+  },
+  {
+    "name": "Potato Salad",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Classic homemade potato salad."
+  },
+  {
+    "name": "Green Beans",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Southern-style green beans cooked low and slow."
+  },
+  {
+    "name": "Corn",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Sweet corn with butter."
+  },
+  {
+    "name": "Black-Eyed Peas",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Traditional Southern black-eyed peas."
+  },
+  {
+    "name": "Pinto Beans",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Slow-cooked pinto beans with seasonings."
+  },
+  {
+    "name": "Refried Beans",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Creamy refried beans, Tex-Mex style."
+  },
+  {
+    "name": "Fried Okra",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Crispy Southern-style fried okra."
+  },
+  {
+    "name": "Fried Mushrooms",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Crispy fried mushrooms."
+  },
+  {
+    "name": "Fried Pickles",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Crispy fried pickle chips."
+  },
+  {
+    "name": "Fried Squash",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Lightly fried yellow squash."
+  },
+  {
+    "name": "Steamed Broccoli",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Fresh steamed broccoli with butter."
+  },
+  {
+    "name": "Steamed Spinach",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Fresh steamed spinach with garlic butter."
+  },
+  {
+    "name": "Sautéed Veggies",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Fresh seasonal vegetables sautéed in butter."
+  },
+  {
+    "name": "Macaroni & Cheese",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Creamy homemade macaroni and cheese."
+  },
+  {
+    "name": "Hush Puppies",
+    "category": "sides",
+    "price": 1.99,
+    "description": "Golden fried cornmeal hush puppies."
+  },
+  {
+    "name": "French Bread",
+    "category": "sides",
+    "price": 0.5,
+    "description": "One piece of warm French bread with butter."
+  },
+  {
+    "name": "Cornbread",
+    "category": "sides",
+    "price": 1.5,
+    "description": "One piece of homemade cornbread."
+  },
+  {
+    "name": "Mexican Rice",
+    "category": "sides",
+    "price": 3.5,
+    "description": "Seasoned Mexican-style rice."
+  },
+  {
+    "name": "Coffee",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Fresh-brewed coffee with free refills."
+  },
+  {
+    "name": "Hot Tea",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Your choice of hot tea."
+  },
+  {
+    "name": "Hot Chocolate",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Rich and creamy hot chocolate."
+  },
+  {
+    "name": "Sweet Tea",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Fresh-brewed Southern sweet tea with free refills."
+  },
+  {
+    "name": "Unsweet Tea",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Fresh-brewed unsweetened iced tea with free refills."
+  },
+  {
+    "name": "Lemonade",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Refreshing lemonade with free refills."
+  },
+  {
+    "name": "Arnold Palmer",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Half iced tea, half lemonade."
+  },
+  {
+    "name": "Shirley Temple",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Ginger ale with grenadine and a cherry."
+  },
+  {
+    "name": "Dr. Pepper",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Dr. Pepper with free refills."
+  },
+  {
+    "name": "Diet Dr. Pepper",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Diet Dr. Pepper with free refills."
+  },
+  {
+    "name": "Pepsi",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Ice-cold Pepsi with free refills."
+  },
+  {
+    "name": "Diet Pepsi",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Diet Pepsi with free refills."
+  },
+  {
+    "name": "Sierra Mist",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Crisp Sierra Mist with free refills."
+  },
+  {
+    "name": "Orange Soda",
+    "category": "beverages",
+    "price": 2.99,
+    "description": "Sweet orange soda with free refills."
+  },
+  {
+    "name": "Orange Juice",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Chilled orange juice."
+  },
+  {
+    "name": "Apple Juice",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Chilled apple juice."
+  },
+  {
+    "name": "Cranberry Juice",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Chilled cranberry juice."
+  },
+  {
+    "name": "Tomato Juice",
+    "category": "beverages",
+    "price": 3.25,
+    "description": "Chilled tomato juice."
+  },
+  {
+    "name": "Milk",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Chilled white milk."
+  },
+  {
+    "name": "Chocolate Milk",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Rich chocolate milk."
+  },
+  {
+    "name": "Topo Chico",
+    "category": "beverages",
+    "price": 3.5,
+    "description": "Crisp, refreshing Topo Chico mineral water."
+  },
+  {
+    "name": "Small Rancheros",
+    "category": "house-specialties",
+    "price": 8.5,
+    "description": "Smaller portion of our famous Huevos Rancheros - eggs on tortillas with ranchero sauce and beans."
+  }
+]
