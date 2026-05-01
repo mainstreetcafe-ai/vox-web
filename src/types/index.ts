@@ -86,3 +86,19 @@ export interface Ticket {
   status: TicketStatus
   createdAt: string
 }
+
+// --- KDS (Kitchen Display System) types ---
+
+export type KDSStatus = 'sent' | 'cooking' | 'ready' | 'served'
+
+export interface KDSTicket {
+  id: string
+  tableNumber: string
+  serverName: string
+  guestCount: number
+  orderType: OrderType
+  items: TicketItem[]
+  status: KDSStatus
+  createdAt: string
+  statusChangedAt: string
+}
