@@ -7,9 +7,11 @@ export function useMessages() {
   const [messages, setMessages] = useState<FeedMessage[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  // Initial fetch -- last 50 messages from today
+  // Initial fetch + refetch when the tab becomes visible. The visibility
+  // refetch catches anything that landed during the realtime-subscribe race
+  // (briefing INSERT that beat SUBSCRIBED -- observed 2026-05-29).
   useEffect(() => {
-    async function fetch() {
+    async function fetchMessages() {
       const todayStart = new Date()
       todayStart.setHours(0, 0, 0, 0)
 
@@ -27,7 +29,13 @@ export function useMessages() {
       setIsLoading(false)
     }
 
-    fetch()
+    fetchMessages()
+
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') fetchMessages()
+    }
+    document.addEventListener('visibilitychange', onVisible)
+    return () => document.removeEventListener('visibilitychange', onVisible)
   }, [])
 
   // Realtime subscription

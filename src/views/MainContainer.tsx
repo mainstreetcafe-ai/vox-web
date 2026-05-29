@@ -13,10 +13,14 @@ export function MainContainer() {
   const [isOnline, setIsOnline] = useState(navigator.onLine)
 
   // Load menu from Supabase (with localStorage fallback) and post the daily
-  // VIP briefing on first staff login of the day.
+  // VIP briefing on first staff login of the day. The briefing is delayed so
+  // the Feed's realtime subscription has time to establish; otherwise the
+  // INSERT can land before SUBSCRIBED and the briefing never reaches the UI
+  // until the next refetch (race observed in pilot on 2026-05-29).
   useEffect(() => {
     loadMenu()
-    postShiftBriefingIfNeeded()
+    const t = setTimeout(() => { postShiftBriefingIfNeeded() }, 1500)
+    return () => clearTimeout(t)
   }, [])
 
   // Listen for online/offline
