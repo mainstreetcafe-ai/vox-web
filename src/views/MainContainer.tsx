@@ -5,10 +5,19 @@ import { DashboardView } from './DashboardView'
 import { CommandView } from './CommandView'
 import { FeedView } from './FeedView'
 import { Haptics } from '@/lib/haptics'
+import { loadMenu } from '@/services/menuSearch'
+import { postShiftBriefingIfNeeded } from '@/services/briefing'
 
 export function MainContainer() {
   const [page, setPage] = useState(1) // 0=Dashboard, 1=Command, 2=Feed
   const [isOnline, setIsOnline] = useState(navigator.onLine)
+
+  // Load menu from Supabase (with localStorage fallback) and post the daily
+  // VIP briefing on first staff login of the day.
+  useEffect(() => {
+    loadMenu()
+    postShiftBriefingIfNeeded()
+  }, [])
 
   // Listen for online/offline
   useEffect(() => {

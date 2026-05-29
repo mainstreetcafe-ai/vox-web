@@ -1,35 +1,21 @@
-import { useState, useCallback, useRef, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import { supabase } from '@/lib/supabase'
 import { API_CONFIG } from '@/lib/constants'
-import type { Ticket, TicketStatus, OrderType } from '@/types'
+import type { Ticket, OrderType } from '@/types'
 import type { StaffMember } from '@/contexts/AuthContext'
 import { parseTicketUtterance } from '@/services/ticketParser'
 
-const TICKET_TIMEOUT_MS = 5 * 60 * 1000
+// Phase 1 (notepad): no auto-cancel while building, no auto-clear after save.
+// Server explicitly cancels or taps "Done" after entering into SHIFT4.
 
 export function useTicket(staff: StaffMember | null) {
-  const [ticket, setTicket] = useState<Ticket | null>(null)
+  const [ticket, setTicket] = useState<(Ticket & { id?: string }) | null>(null)
   const [statusText, setStatusText] = useState('')
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
+  // True while the server is dictating items into this ticket.
   const isActive = ticket !== null && ticket.status === 'building'
-
-  const clearTicketTimeout = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = null
-    }
-  }, [])
-
-  const resetTimeout = useCallback(() => {
-    clearTicketTimeout()
-    timeoutRef.current = setTimeout(() => {
-      setTicket(null)
-      setStatusText('')
-    }, TICKET_TIMEOUT_MS)
-  }, [clearTicketTimeout])
-
-  useEffect(() => clearTicketTimeout, [clearTicketTimeout])
+  // True whenever a ticket is on screen (building OR saved-awaiting-Done).
+  const isOpen = ticket !== null && ticket.status !== 'cancelled'
 
   const startTicket = useCallback((
     tableNumber: string,
@@ -49,16 +35,13 @@ export function useTicket(staff: StaffMember | null) {
       createdAt: new Date().toISOString(),
     })
     setStatusText(`${tableNumber.toUpperCase()} -- ${guestCount} guests`)
-    resetTimeout()
-  }, [staff, resetTimeout])
+  }, [staff])
 
   const processUtterance = useCallback((utterance: string): string => {
     if (!ticket || ticket.status !== 'building') return 'No active ticket'
 
     const command = parseTicketUtterance(utterance)
     if (!command) return `Couldn't parse: "${utterance}"`
-
-    resetTimeout()
 
     switch (command.type) {
       case 'add_item': {
@@ -101,100 +84,89 @@ export function useTicket(staff: StaffMember | null) {
       case 'send':
         return 'SEND'
       case 'cancel':
-        clearTicketTimeout()
         setTicket(null)
         setStatusText('')
         return 'CANCEL'
     }
-  }, [ticket, resetTimeout, clearTicketTimeout])
+  }, [ticket])
 
-  const sendTicket = useCallback(async (
-    onSendMessage: (sender: string, text: string, type: 'alert' | 'manager' | 'info') => Promise<void>,
-  ): Promise<boolean> => {
+  // Save the ticket to vox_tickets and keep it on screen so the server can
+  // read it on the walk back to the POS terminal. Status stays 'sent' until
+  // the server taps Done.
+  const sendTicket = useCallback(async (): Promise<boolean> => {
     if (!ticket || !staff) return false
 
-    // 1. Insert into vox_tickets
-    const { error } = await supabase.from('vox_tickets').insert({
-      restaurant_id: API_CONFIG.restaurantId,
-      table_number: ticket.tableNumber,
-      server_id: ticket.serverId,
-      server_name: ticket.serverName,
-      guest_count: ticket.guestCount,
-      order_type: ticket.orderType,
-      items: ticket.items,
-      status: 'sent',
-    })
+    const checkTotal = ticket.items.reduce(
+      (sum, i) => sum + (i.menuItemPrice ?? 0) * i.quantity, 0,
+    )
 
-    if (error) {
+    const { data, error } = await supabase
+      .from('vox_tickets')
+      .insert({
+        restaurant_id: API_CONFIG.restaurantId,
+        table_number: ticket.tableNumber,
+        server_id: ticket.serverId,
+        server_name: ticket.serverName,
+        guest_count: ticket.guestCount,
+        order_type: ticket.orderType,
+        items: ticket.items,
+        status: 'sent',
+      })
+      .select('id')
+      .single()
+
+    if (error || !data) {
       setStatusText('Failed to save ticket')
       return false
     }
 
-    // 2. Post to feed
-    const itemLines = ticket.items.map(i => {
-      const mods = i.modifiers.map(m => m.text).join(', ')
-      return `  ${i.menuItemName}${mods ? ' (' + mods + ')' : ''}`
-    }).join('\n')
-    await onSendMessage(
-      ticket.serverName,
-      `Order ${ticket.tableNumber} (${ticket.guestCount}g):\n${itemLines}`,
-      'alert',
-    )
-
-    // 3. Webhook for Telegram relay
-    if (API_CONFIG.n8nBaseUrl) {
-      fetch(`${API_CONFIG.n8nBaseUrl}/webhook/vox-ticket`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(API_CONFIG.voxAuthToken ? { 'X-Vox-Auth': API_CONFIG.voxAuthToken } : {}),
-        },
-        body: JSON.stringify({
-          table_number: ticket.tableNumber,
-          server_name: ticket.serverName,
-          guest_count: ticket.guestCount,
-          items: ticket.items,
-          restaurant_id: API_CONFIG.restaurantId,
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch(() => {})
-    }
-
-    // 4. Update table session item count + check total
-    const checkTotal = ticket.items.reduce(
-      (sum, i) => sum + (i.menuItemPrice ?? 0) * i.quantity, 0,
-    )
+    // Mirror item count + estimated total onto the table session for the
+    // dashboard, but do not post to the feed and do not call any n8n/Telegram
+    // webhook -- Phase 1 is a notepad, SHIFT4 is the system of record.
     await supabase
       .from('vox_table_sessions')
       .update({ item_count: ticket.items.length, check_total: checkTotal })
       .eq('restaurant_id', API_CONFIG.restaurantId)
       .eq('table_number', ticket.tableNumber)
 
-    clearTicketTimeout()
-    setTicket(prev => prev ? { ...prev, status: 'sent' as TicketStatus } : null)
-    setStatusText('Order sent!')
-
-    setTimeout(() => {
-      setTicket(null)
-      setStatusText('')
-    }, 2000)
+    setTicket(prev => prev ? { ...prev, id: data.id as string, status: 'sent' } : null)
+    setStatusText('Saved -- enter in SHIFT4, then tap Done')
 
     return true
-  }, [ticket, staff, clearTicketTimeout])
+  }, [ticket, staff])
 
-  const cancelTicket = useCallback(() => {
-    clearTicketTimeout()
+  // Server taps Done after entering the order into SHIFT4. We mark the row
+  // 'done' for the dashboard's "Today's tickets" list, then clear the screen.
+  const markDone = useCallback(async (): Promise<void> => {
+    if (!ticket || !ticket.id) {
+      setTicket(null)
+      setStatusText('')
+      return
+    }
+
+    await supabase
+      .from('vox_tickets')
+      .update({ status: 'done', status_changed_at: new Date().toISOString() })
+      .eq('id', ticket.id)
+
     setTicket(null)
     setStatusText('')
-  }, [clearTicketTimeout])
+  }, [ticket])
+
+  const cancelTicket = useCallback(() => {
+    setTicket(null)
+    setStatusText('')
+  }, [])
 
   return {
     ticket,
     isActive,
+    isOpen,
     statusText,
     startTicket,
     processUtterance,
     sendTicket,
+    markDone,
     cancelTicket,
   }
 }

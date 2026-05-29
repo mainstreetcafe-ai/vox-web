@@ -20,39 +20,43 @@ export function CommandView() {
     : 'idle'
 
   // --- Ticket mode layout ---
-  if (cmd.ticketActive && cmd.ticket) {
+  // Shown while building (mini-ring active) AND after save (read-only with Done button).
+  if (cmd.isTicketOpen && cmd.ticket) {
+    const isSaved = cmd.ticket.status === 'sent'
     return (
       <div className="h-full flex flex-col relative">
-        {/* Ticket view -- top ~65% */}
-        <div className="flex-[65] overflow-y-auto px-4 pt-4 pb-2">
+        {/* Ticket view -- top ~65% while building, full while saved */}
+        <div className={`${isSaved ? 'flex-1' : 'flex-[65]'} overflow-y-auto px-4 pt-4 pb-2`}>
           <TicketView
             ticket={cmd.ticket}
             onSend={cmd.sendTicket}
             onCancel={cmd.cancelTicket}
+            onDone={cmd.markTicketDone}
           />
         </div>
 
-        {/* Mini ring + status -- bottom ~35% */}
-        <div className="flex-[35] flex flex-col items-center justify-center pb-4">
-          {/* Transcription while listening */}
-          {(cmd.state === 'listening' || cmd.state === 'processing') && (
-            <p
-              className={`text-base text-center mb-2 transition-opacity duration-300 max-w-[85%] min-h-[22px] ${
-                cmd.state === 'processing' ? 'opacity-50' : 'opacity-100'
-              }`}
-            >
-              {cmd.transcription || '\u00A0'}
-            </p>
-          )}
+        {/* Mini ring + status -- only while building. After save the Done button is the exit. */}
+        {!isSaved && (
+          <div className="flex-[35] flex flex-col items-center justify-center pb-4">
+            {(cmd.state === 'listening' || cmd.state === 'processing') && (
+              <p
+                className={`text-base text-center mb-2 transition-opacity duration-300 max-w-[85%] min-h-[22px] ${
+                  cmd.state === 'processing' ? 'opacity-50' : 'opacity-100'
+                }`}
+              >
+                {cmd.transcription || '\u00A0'}
+              </p>
+            )}
 
-          {cmd.state === 'processing' && (
-            <p className="text-gray text-[11px] mb-1">Processing...</p>
-          )}
+            {cmd.state === 'processing' && (
+              <p className="text-gray text-[11px] mb-1">Processing...</p>
+            )}
 
-          <BreathingRing state={ringState} onTap={handleRingTap} />
+            <BreathingRing state={ringState} onTap={handleRingTap} />
 
-          <p className="text-gray text-[13px] mt-2">{cmd.ticketStatus}</p>
-        </div>
+            <p className="text-gray text-[13px] mt-2">{cmd.ticketStatus}</p>
+          </div>
+        )}
       </div>
     )
   }

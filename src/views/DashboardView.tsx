@@ -1,9 +1,11 @@
 import { useMemo } from 'react'
 import { TableCard } from '@/components/TableCard'
+import { RecentTicketsList } from '@/components/RecentTicketsList'
 import { shiftContextLine } from '@/lib/time'
 import { useSalesData } from '@/hooks/useSalesData'
 import { useTableSessions } from '@/hooks/useTableSessions'
 import { useEightySix } from '@/hooks/useEightySix'
+import { useMyTickets } from '@/hooks/useMyTickets'
 import { useAuth } from '@/contexts/AuthContext'
 
 const SECTION_LABELS: Record<string, string> = {
@@ -20,6 +22,7 @@ export function DashboardView() {
   const { latest } = useSalesData()
   const { tables, isLoading } = useTableSessions()
   const { items: eightySixed } = useEightySix()
+  const { tickets: myTickets, markDone } = useMyTickets(staff?.id)
 
   const shiftStart = useMemo(() => {
     const d = new Date()
@@ -90,6 +93,9 @@ export function DashboardView() {
           <p className="text-gray text-[13px]">{eightySixed.map(i => i.itemName).join(', ')}</p>
         </div>
       )}
+
+      {/* Today's tickets -- pending entries the server still needs to log in SHIFT4 */}
+      <RecentTicketsList tickets={myTickets} onMarkDone={markDone} />
 
       {/* Table cards grouped by section */}
       {isLoading ? (

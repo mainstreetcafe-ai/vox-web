@@ -40,6 +40,7 @@ export async function executeCommand(
   switch (intent) {
     case 'sales_query': return querySales()
     case 'staff_check': return queryStaff(entities)
+    case 'customer_lookup': return customerLookup(entities)
     case 'menu_lookup': return menuLookup(entities, ctx.eightySixItems)
     case 'table_status': return tableStatus(entities, ctx.tables)
     case 'my_tables': return myTables(ctx)
@@ -81,6 +82,75 @@ async function querySales(): Promise<CommandResponse> {
   const guests = data.headcount > 0 ? `, ${data.headcount} guests` : ''
 
   return { text: `${date}: ${gross} gross${guests}`, type: 'info', requiresConfirmation: false }
+}
+
+// Looks up a customer in the SHIFT4 loyalty graph (shift4_card_customer view).
+// Names are stored uppercase in LAST/FIRST format; we ilike-match each word.
+async function customerLookup(entities: Record<string, string>): Promise<CommandResponse> {
+  const raw = (entities.customer_name || '').trim()
+  if (!raw) {
+    return { text: 'Who do you want to look up?', type: 'info', requiresConfirmation: false }
+  }
+
+  const words = raw.toUpperCase().replace(/[^A-Z0-9\s]/g, '').split(/\s+/).filter(w => w.length >= 2)
+  if (words.length === 0) {
+    return { text: 'Need a name to look up.', type: 'info', requiresConfirmation: false }
+  }
+
+  const orFilter = words.map(w => `cardholder_normalized.ilike.%${w}%`).join(',')
+
+  const { data, error } = await supabase
+    .from('shift4_card_customer')
+    .select('cardholder_normalized, visit_count, last_visit, avg_ticket, lifetime_revenue, lifetime_tips')
+    .eq('restaurant_id', API_CONFIG.restaurantId)
+    .or(orFilter)
+    .order('visit_count', { ascending: false })
+    .limit(10)
+
+  if (error || !data || data.length === 0) {
+    return { text: `No regular matching "${raw}". First-time or pays cash.`, type: 'info', requiresConfirmation: false }
+  }
+
+  // Prefer a row that contains ALL search words; fall back to top by visit_count.
+  const allWordsMatch = data.find(row =>
+    words.every(w => (row.cardholder_normalized as string).toUpperCase().includes(w))
+  )
+  const row = allWordsMatch ?? data[0]
+
+  const cardholderName = formatCardholder(row.cardholder_normalized as string)
+  const visits = Number(row.visit_count) || 0
+  const avg = Number(row.avg_ticket) || 0
+  const revenue = Number(row.lifetime_revenue) || 0
+  const tips = Number(row.lifetime_tips) || 0
+  const tipPct = revenue > 0 ? Math.round((tips / revenue) * 100) : 0
+
+  const lastVisit = row.last_visit
+    ? new Date((row.last_visit as string) + 'T00:00:00')
+    : null
+  const daysAgo = lastVisit
+    ? Math.round((Date.now() - lastVisit.getTime()) / 86400000)
+    : null
+  const lastVisitText = daysAgo === null
+    ? ''
+    : daysAgo === 0 ? ', last in today'
+    : daysAgo === 1 ? ', last in yesterday'
+    : daysAgo < 30 ? `, last in ${daysAgo}d ago`
+    : `, last in ${Math.round(daysAgo / 30)}mo ago`
+
+  return {
+    text: `${cardholderName} — ${visits} visits, $${avg.toFixed(0)} avg, tipped ${tipPct}%${lastVisitText}`,
+    type: 'info',
+    requiresConfirmation: false,
+  }
+}
+
+function formatCardholder(s: string): string {
+  if (!s) return 'Regular'
+  if (s.includes('/')) {
+    const [last, first] = s.split('/')
+    return `${(first || '').trim()} ${(last || '').trim()}`.trim()
+  }
+  return s
 }
 
 async function queryStaff(entities: Record<string, string>): Promise<CommandResponse> {

@@ -114,26 +114,24 @@ export function useCommandState() {
       const result = t.processUtterance(transcript)
 
       if (result === 'SEND') {
-        const success = await t.sendTicket(sendMessage)
+        const success = await t.sendTicket()
         logCommand(
           { intent: 'ticket_send', entities: {}, confidence: 1, rawTranscript: transcript },
-          { text: success ? 'Order sent' : 'Failed', type: success ? 'success' : 'error', requiresConfirmation: false },
+          { text: success ? 'Saved' : 'Failed', type: success ? 'success' : 'error', requiresConfirmation: false },
           ctx.staff,
         ).catch(() => {})
 
         if (success) {
           Haptics.success()
-          setResponse({ text: 'Order sent!', type: 'success', requiresConfirmation: false })
-          setShowResponse(true)
-          setState('responding')
-          dismissTimer.current = setTimeout(dismissResponse, APP_CONFIG.responseDismissMs)
         } else {
           Haptics.error()
-          setResponse({ text: 'Failed to send order', type: 'error', requiresConfirmation: false })
+          setResponse({ text: 'Failed to save ticket', type: 'error', requiresConfirmation: false })
           setShowResponse(true)
           setState('responding')
           dismissTimer.current = setTimeout(dismissResponse, APP_CONFIG.responseDismissMs)
         }
+        // Stay idle; the ticket UI remains visible with the Done button.
+        setState('idle')
         return
       }
 
@@ -251,11 +249,11 @@ export function useCommandState() {
     // Ticket
     ticket: ticketHook.ticket,
     ticketActive: ticketHook.isActive,
+    isTicketOpen: ticketHook.isOpen,
     ticketStatus: ticketHook.statusText,
     cancelTicket: ticketHook.cancelTicket,
-    sendTicket: useCallback(async () => {
-      return ticketHook.sendTicket(sendMessage)
-    }, [ticketHook.sendTicket, sendMessage]),
+    sendTicket: ticketHook.sendTicket,
+    markTicketDone: ticketHook.markDone,
   }
 }
 

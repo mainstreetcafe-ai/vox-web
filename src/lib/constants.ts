@@ -9,7 +9,6 @@ export const APP_CONFIG = {
   responseDismissMs: 4500,
   maxLoginAttempts: 5,
   lockoutDurationMs: 5 * 60 * 1000,
-  mockPin: '1234',
 } as const
 
 export const API_CONFIG = {

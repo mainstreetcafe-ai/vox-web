@@ -4,9 +4,10 @@ interface Props {
   ticket: Ticket
   onSend: () => void
   onCancel: () => void
+  onDone: () => void
 }
 
-export function TicketView({ ticket, onSend, onCancel }: Props) {
+export function TicketView({ ticket, onSend, onCancel, onDone }: Props) {
   const isSent = ticket.status === 'sent'
 
   return (
@@ -89,8 +90,16 @@ export function TicketView({ ticket, onSend, onCancel }: Props) {
       )}
 
       {isSent && (
-        <div className="mt-5 text-center py-2">
-          <span className="text-green-400 font-medium">Order sent</span>
+        <div className="mt-5 border-t border-gray-dim/20 pt-4">
+          <p className="text-green-400 text-[13px] text-center mb-3">
+            Saved -- enter in SHIFT4, then tap Done
+          </p>
+          <button
+            onClick={onDone}
+            className="w-full bg-maroon text-white py-3 rounded-lg font-medium text-base active:opacity-80 transition-opacity"
+          >
+            Done
+          </button>
         </div>
       )}
 

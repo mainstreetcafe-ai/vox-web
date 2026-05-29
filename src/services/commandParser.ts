@@ -5,6 +5,7 @@ export type CommandIntent =
   | 'eighty_six' | 'un_eighty_six' | 'cancel_order'
   | 'clock_in' | 'clock_out'
   | 'ticket_start' | 'ticket_item' | 'ticket_send' | 'ticket_cancel'
+  | 'customer_lookup'
   | 'unknown'
 
 export interface ParsedCommand {
@@ -215,6 +216,22 @@ const RULES: PatternRule[] = [
     extract: (m) => ({ table_number: m[1].toUpperCase() }),
     confidence: 0.9,
   },
+  // Customer lookup (must precede menu_lookup so "tell me about customer X" doesn't get
+  // captured by the generic "tell me about the X" menu pattern).
+  {
+    patterns: [
+      'is (.+) a regular',
+      'is (.+) one of our regulars',
+      'look ?up customer (.+)',
+      'customer lookup (.+)',
+      'regular check (.+)',
+      'tell me about customer (.+)',
+      'how often does (.+) come in',
+    ],
+    intent: 'customer_lookup',
+    extract: (m) => ({ customer_name: m[1].trim() }),
+    confidence: 0.9,
+  },
   // Menu lookup (patterns from 1,013 real call transcripts)
   {
     patterns: [
@@ -334,6 +351,7 @@ export function intentDisplayName(intent: CommandIntent): string {
     ticket_item: 'Ticket Item',
     ticket_send: 'Send Ticket',
     ticket_cancel: 'Cancel Ticket',
+    customer_lookup: 'Customer Lookup',
     unknown: 'Unknown',
   }
   return names[intent]

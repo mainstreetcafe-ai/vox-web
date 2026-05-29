@@ -56,7 +56,10 @@ export interface CommandQueueItem {
 
 // --- Ticket types ---
 
-export type TicketStatus = 'building' | 'sent' | 'cancelled'
+// Lifecycle: building (dictating) -> sent (saved, server walking to POS) -> done (entered in SHIFT4).
+// 'sent' is the captured-but-not-yet-entered state; named for backward compatibility with the
+// vox_tickets.status text column already in use.
+export type TicketStatus = 'building' | 'sent' | 'done' | 'cancelled'
 
 export type OrderType = 'dine_in' | 'to_go'
 
