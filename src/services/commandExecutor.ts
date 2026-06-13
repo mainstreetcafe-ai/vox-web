@@ -28,7 +28,6 @@ export async function executeCommand(
   if (intent === 'unknown' || confidence < 0.5) {
     // Post unrecognized speech to feed so nothing gets lost
     await ctx.onSendMessage(ctx.staff.name, parsed.rawTranscript, 'info')
-    postToWebhook('unrecognized', { message: parsed.rawTranscript }, ctx).catch(() => {})
 
     return {
       text: `Posted to feed: "${parsed.rawTranscript}"`,
@@ -299,9 +298,6 @@ async function messageKitchen(entities: Record<string, string>, ctx: ExecutorCon
   const msg = entities.message
   await ctx.onSendMessage(ctx.staff.name, `Kitchen: ${msg}`, 'alert')
 
-  // Also try n8n webhook for Telegram relay
-  postToWebhook('message_kitchen', { message: msg }, ctx).catch(() => {})
-
   return { text: `Sent to kitchen: "${msg}"`, type: 'success', requiresConfirmation: false }
 }
 
@@ -309,8 +305,6 @@ async function messageManager(entities: Record<string, string>, ctx: ExecutorCon
   const recipient = entities.recipient
   const msg = entities.message
   await ctx.onSendMessage(ctx.staff.name, `To ${recipient}: ${msg}`, 'manager')
-
-  postToWebhook('message_manager', { recipient, message: msg }, ctx).catch(() => {})
 
   return { text: `Message to ${recipient}: "${msg}"`, type: 'success', requiresConfirmation: false }
 }
@@ -323,37 +317,5 @@ async function orderSubmit(parsed: ParsedCommand, ctx: ExecutorContext): Promise
   // Post to feed
   await ctx.onSendMessage(ctx.staff.name, `Order for ${tableId}: ${items}`, 'alert')
 
-  // Try n8n webhook for Telegram relay
-  postToWebhook('order_submit', entities, ctx).catch(() => {})
-
   return { text: `Order sent: ${items} for ${tableId}`, type: 'success', requiresConfirmation: false }
-}
-
-// --- Webhook helper ---
-
-async function postToWebhook(
-  intent: string,
-  entities: Record<string, string>,
-  ctx: ExecutorContext,
-): Promise<void> {
-  if (!API_CONFIG.n8nBaseUrl) return
-
-  const url = `${API_CONFIG.n8nBaseUrl}${API_CONFIG.webhookCommand}`
-
-  await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      ...(API_CONFIG.voxAuthToken ? { 'X-Vox-Auth': API_CONFIG.voxAuthToken } : {}),
-    },
-    body: JSON.stringify({
-      intent,
-      entities,
-      staff_id: ctx.staff.id,
-      staff_name: ctx.staff.name,
-      role: ctx.staff.role,
-      restaurant_id: API_CONFIG.restaurantId,
-      timestamp: new Date().toISOString(),
-    }),
-  })
 }

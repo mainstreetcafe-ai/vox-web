@@ -4,6 +4,7 @@ import { APP_CONFIG } from '@/lib/constants'
 import { Haptics } from '@/lib/haptics'
 import { SpeechService } from '@/services/speechService'
 import { parseCommand } from '@/services/commandParser'
+import { classifyTranscript, CLASSIFY_CONFIDENCE_THRESHOLD } from '@/services/classifyService'
 import { executeCommand, type ExecutorContext } from '@/services/commandExecutor'
 import { logCommand } from '@/services/commandLogger'
 import { useAuth, type StaffMember } from '@/contexts/AuthContext'
@@ -119,6 +120,7 @@ export function useCommandState() {
           { intent: 'ticket_send', entities: {}, confidence: 1, rawTranscript: transcript },
           { text: success ? 'Saved' : 'Failed', type: success ? 'success' : 'error', requiresConfirmation: false },
           ctx.staff,
+          'ticket',
         ).catch(() => {})
 
         if (success) {
@@ -140,6 +142,7 @@ export function useCommandState() {
           { intent: 'ticket_cancel', entities: {}, confidence: 1, rawTranscript: transcript },
           { text: 'Order cancelled', type: 'info', requiresConfirmation: false },
           ctx.staff,
+          'ticket',
         ).catch(() => {})
         Haptics.light()
         setState('idle')
@@ -151,6 +154,7 @@ export function useCommandState() {
         { intent: 'ticket_item', entities: {}, confidence: 1, rawTranscript: transcript },
         { text: result, type: 'info', requiresConfirmation: false },
         ctx.staff,
+        'ticket',
       ).catch(() => {})
       Haptics.success()
       setState('idle')
@@ -158,7 +162,19 @@ export function useCommandState() {
     }
 
     // --- Normal mode ---
-    const parsed = parseCommand(transcript)
+    let parsed = parseCommand(transcript)
+    let source: 'regex' | 'llm' = 'regex'
+
+    // LLM fallback: when the regex can't read the utterance, ask the on-Mini
+    // classifier. Inert (returns null) until VITE_VOX_CLASSIFY_URL is set, so
+    // until the tunnel is live this is a no-op and unknowns go to the Feed.
+    if (parsed.intent === 'unknown' || parsed.confidence < CLASSIFY_CONFIDENCE_THRESHOLD) {
+      const llm = await classifyTranscript(transcript)
+      if (llm) {
+        parsed = llm
+        source = 'llm'
+      }
+    }
 
     // Intercept ticket_start before executor
     if (parsed.intent === 'ticket_start') {
@@ -169,6 +185,7 @@ export function useCommandState() {
         parsed,
         { text: `Ticket started: ${table}`, type: 'success', requiresConfirmation: false },
         ctx.staff,
+        source,
       ).catch(() => {})
       Haptics.success()
       setState('idle')
@@ -177,8 +194,8 @@ export function useCommandState() {
 
     const commandResponse = await executeCommand(parsed, ctx)
 
-    // Log every command for training
-    logCommand(parsed, commandResponse, ctx.staff).catch(() => {})
+    // Log every command for training + the post-fix unknown-rate metric
+    logCommand(parsed, commandResponse, ctx.staff, source).catch(() => {})
 
     setResponse(commandResponse)
     setShowResponse(true)

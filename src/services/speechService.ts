@@ -40,9 +40,11 @@ export class SpeechService {
     recognition.interimResults = true
     recognition.maxAlternatives = 1
 
-    // iOS: continuous mode is unreliable. Use single-utterance mode.
-    // Desktop: continuous mode works fine with silence detection.
-    recognition.continuous = !isIOS
+    // Single-utterance mode on every platform (Workstream B / push-to-talk
+    // hygiene): the mic captures one note then closes, so it never stays open
+    // passively listening to customer-facing speech -- the biggest source of the
+    // April pilot's 72% unknown rate. (Tap-to-arm already lives in CommandView.)
+    recognition.continuous = false
 
     recognition.onstart = () => {
       this.onStateChange?.('listening')
