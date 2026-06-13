@@ -28,21 +28,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setError(null)
 
     try {
-      const { data, error: queryError } = await supabase
-        .from('vox_staff')
-        .select('id, name, role')
-        .eq('restaurant_id', API_CONFIG.restaurantId)
-        .eq('pin', pin)
-        .eq('is_active', true)
-        .single()
+      // PINs are verified server-side: vox_verify_pin (SECURITY DEFINER) checks the
+      // bcrypt pin_hash and returns the staff row only on match. The anon key can no
+      // longer read pin/pin_hash, so credentials never reach the client bundle.
+      const { data, error: queryError } = await supabase.rpc('vox_verify_pin', {
+        p_restaurant_id: API_CONFIG.restaurantId,
+        p_pin: pin,
+      })
 
-      if (queryError || !data) {
+      const match = Array.isArray(data) ? data[0] : null
+      if (queryError || !match) {
         setError('Incorrect PIN')
         setIsLoading(false)
         return false
       }
 
-      setStaff({ id: data.id, name: data.name, role: data.role })
+      setStaff({ id: match.id, name: match.name, role: match.role })
       setIsLoading(false)
       return true
     } catch {
