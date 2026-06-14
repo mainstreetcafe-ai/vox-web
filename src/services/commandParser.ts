@@ -100,6 +100,11 @@ const RULES: PatternRule[] = [
       `new ticket (?:for |at )?(?:table )?${TBL}\\b(?:\\s+(\\d+))?`,
       `start (?:an? )?order (?:for |at )?(?:table )?${TBL}\\b(?:\\s+(\\d+))?`,
       `${TBL} new order(?:\\s+(\\d+))?`,
+      // Open-table-by-party-size (operator decision 2026-06-14: "B1 3 people" = open
+      // the table, not seat_table). Was the #1 LLM-fallback cluster; now instant regex.
+      `open (?:table )?${TBL}(?:\\s+(?:for )?(\\d+))?(?:\\s+(?:people|customers|guests|seats|top))?\\b`,
+      `(?:table )?${TBL}\\s+(?:for |party of )?(\\d+)\\s+(?:people|customers|guests|seats|top)\\b`,
+      `table ${TBL}\\s+(?:for )?(\\d+)\\b`,
     ],
     intent: 'ticket_start',
     extract: (m, normalized) => {
