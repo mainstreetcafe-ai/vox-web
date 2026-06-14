@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { ResponseType } from '@/types'
 
 interface Props {
@@ -6,6 +7,7 @@ interface Props {
   onConfirm?: () => void
   onCancel?: () => void
   onDismiss?: () => void
+  onFlagWrong?: () => void
 }
 
 const borderColors: Record<ResponseType, string> = {
@@ -15,7 +17,9 @@ const borderColors: Record<ResponseType, string> = {
   error: 'border-error',
 }
 
-export function ResponseCard({ text, type, onConfirm, onCancel, onDismiss }: Props) {
+export function ResponseCard({ text, type, onConfirm, onCancel, onDismiss, onFlagWrong }: Props) {
+  const [flagged, setFlagged] = useState(false)
+
   return (
     <div
       className={`bg-surface rounded-2xl border ${borderColors[type]} px-6 py-5`}
@@ -44,6 +48,23 @@ export function ResponseCard({ text, type, onConfirm, onCancel, onDismiss }: Pro
             Cancel
           </button>
         </div>
+      )}
+
+      {/* One-tap ground-truth: flag a wrong parse. Trains the self-improvement loop. */}
+      {type !== 'confirm' && onFlagWrong && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
+            if (flagged) return
+            setFlagged(true)
+            onFlagWrong()
+          }}
+          className={`mt-3 text-[12px] uppercase tracking-widest ${
+            flagged ? 'text-success' : 'text-gray-dim active:text-error'
+          }`}
+        >
+          {flagged ? 'Flagged - thanks' : 'Wrong?'}
+        </button>
       )}
     </div>
   )

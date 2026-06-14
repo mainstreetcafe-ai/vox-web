@@ -6,7 +6,7 @@ import { SpeechService } from '@/services/speechService'
 import { parseCommand } from '@/services/commandParser'
 import { classifyTranscript, CLASSIFY_CONFIDENCE_THRESHOLD } from '@/services/classifyService'
 import { executeCommand, type ExecutorContext } from '@/services/commandExecutor'
-import { logCommand } from '@/services/commandLogger'
+import { logCommand, flagCommandWrong } from '@/services/commandLogger'
 import { useAuth, type StaffMember } from '@/contexts/AuthContext'
 import { useTableSessions } from './useTableSessions'
 import { useEightySix } from './useEightySix'
@@ -29,6 +29,7 @@ export function useCommandState() {
   const speechRef = useRef<SpeechService | null>(null)
   const finalTranscriptRef = useRef('')
   const latestTranscriptRef = useRef('')
+  const lastCommandIdRef = useRef<string | null>(null)
 
   // Keep refs current for async processTranscript
   const staffRef = useRef<StaffMember | null>(staff)
@@ -155,7 +156,7 @@ export function useCommandState() {
         { text: result, type: 'info', requiresConfirmation: false },
         ctx.staff,
         'ticket',
-      ).catch(() => {})
+      ).then((id) => { if (id) lastCommandIdRef.current = id }).catch(() => {})
       Haptics.success()
       setState('idle')
       return
@@ -186,7 +187,7 @@ export function useCommandState() {
         { text: `Ticket started: ${table}`, type: 'success', requiresConfirmation: false },
         ctx.staff,
         source,
-      ).catch(() => {})
+      ).then((id) => { if (id) lastCommandIdRef.current = id }).catch(() => {})
       Haptics.success()
       setState('idle')
       return
@@ -195,7 +196,8 @@ export function useCommandState() {
     const commandResponse = await executeCommand(parsed, ctx)
 
     // Log every command for training + the post-fix unknown-rate metric
-    logCommand(parsed, commandResponse, ctx.staff, source).catch(() => {})
+    logCommand(parsed, commandResponse, ctx.staff, source)
+      .then((id) => { if (id) lastCommandIdRef.current = id }).catch(() => {})
 
     setResponse(commandResponse)
     setShowResponse(true)
@@ -252,6 +254,14 @@ export function useCommandState() {
     dismissResponse()
   }, [dismissResponse])
 
+  // One-tap ground-truth: flag the most-recently-logged command as a wrong parse.
+  const markLastWrong = useCallback(async () => {
+    const id = lastCommandIdRef.current
+    if (!id) return false
+    Haptics.medium()
+    return flagCommandWrong(id)
+  }, [])
+
   return {
     state,
     transcription,
@@ -263,6 +273,7 @@ export function useCommandState() {
     confirmAction,
     cancelAction,
     dismissResponse,
+    markLastWrong,
     // Ticket
     ticket: ticketHook.ticket,
     ticketActive: ticketHook.isActive,

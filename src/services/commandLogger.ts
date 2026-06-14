@@ -14,8 +14,8 @@ export async function logCommand(
   response: CommandResponse,
   staff: StaffMember,
   source: CommandSource = 'regex',
-): Promise<void> {
-  await supabase.from('vox_commands').insert({
+): Promise<string | null> {
+  const { data } = await supabase.from('vox_commands').insert({
     restaurant_id: API_CONFIG.restaurantId,
     staff_id: staff.id,
     staff_name: staff.name,
@@ -26,5 +26,12 @@ export async function logCommand(
     response_text: response.text,
     response_type: response.type,
     source,
-  })
+  }).select('id').single()
+  return data?.id ?? null
+}
+
+// One-tap "wrong" ground-truth signal: flags a just-logged command as a bad parse.
+export async function flagCommandWrong(commandId: string): Promise<boolean> {
+  const { data, error } = await supabase.rpc('vox_flag_command', { p_command_id: commandId })
+  return !error && data === true
 }

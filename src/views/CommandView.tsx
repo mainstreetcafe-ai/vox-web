@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { BreathingRing } from '@/components/BreathingRing'
 import { ResponseCard } from '@/components/ResponseCard'
 import { TicketView } from '@/components/TicketView'
@@ -5,6 +6,9 @@ import { useCommandState } from '@/hooks/useCommandState'
 
 export function CommandView() {
   const cmd = useCommandState()
+  // One-tap "wrong" for the last ticket entry; resets when a new utterance starts.
+  const [ticketWrong, setTicketWrong] = useState(false)
+  useEffect(() => { if (cmd.state === 'listening') setTicketWrong(false) }, [cmd.state])
 
   const handleRingTap = () => {
     if (cmd.state === 'idle' || cmd.state === 'responding') {
@@ -55,6 +59,14 @@ export function CommandView() {
             <BreathingRing state={ringState} onTap={handleRingTap} />
 
             <p className="text-gray text-[13px] mt-2">{cmd.ticketStatus}</p>
+            <button
+              onClick={() => { if (!ticketWrong) { setTicketWrong(true); cmd.markLastWrong() } }}
+              className={`mt-1 text-[11px] uppercase tracking-widest ${
+                ticketWrong ? 'text-success' : 'text-gray-dim active:text-error'
+              }`}
+            >
+              {ticketWrong ? 'Flagged - thanks' : 'Last entry wrong?'}
+            </button>
           </div>
         )}
       </div>
@@ -114,6 +126,7 @@ export function CommandView() {
             onConfirm={cmd.confirmAction}
             onCancel={cmd.cancelAction}
             onDismiss={cmd.dismissResponse}
+            onFlagWrong={cmd.markLastWrong}
           />
         </div>
       )}
