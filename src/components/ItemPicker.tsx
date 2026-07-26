@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Haptics } from '@/lib/haptics'
 import { loadGrammar, type GrammarItem } from '@/services/grammar'
+import { Overlay } from './Overlay'
 
 // Grammar-powered item picker: tap a dish, get ITS OWN modifier sets as chips.
 //
@@ -48,7 +49,8 @@ export function ItemPicker({ onAdd, onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-bg">
+    <Overlay>
+    <div className="fixed inset-0 z-50 flex flex-col bg-bg overflow-x-hidden">
       {/* header */}
       <div className="pt-[env(safe-area-inset-top,20px)] px-4 shrink-0 border-b border-white/10">
         <div className="flex items-center justify-between py-3">
@@ -168,5 +170,6 @@ export function ItemPicker({ onAdd, onClose }: Props) {
         </div>
       )}
     </div>
+    </Overlay>
   )
 }

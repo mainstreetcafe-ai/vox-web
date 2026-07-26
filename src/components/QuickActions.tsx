@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Haptics } from '@/lib/haptics'
+import { Overlay } from './Overlay'
 
 // Quick-add buttons for the highest-frequency inputs on the floor.
 //
@@ -98,6 +99,7 @@ interface SheetProps {
 export function TableActionSheet({ table, onOpenTable, onClose }: SheetProps) {
   const [party, setParty] = useState(2)
   return (
+    <Overlay>
     <div className="fixed inset-0 z-50 flex flex-col justify-end bg-black/70"
          onClick={onClose}>
       <div className="bg-bg border-t border-white/10 rounded-t-2xl px-4 pt-4
@@ -122,5 +124,6 @@ export function TableActionSheet({ table, onOpenTable, onClose }: SheetProps) {
         </p>
       </div>
     </div>
+    </Overlay>
   )
 }
