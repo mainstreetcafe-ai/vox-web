@@ -29,6 +29,7 @@ export function useCommandState() {
   const speechRef = useRef<SpeechService | null>(null)
   const finalTranscriptRef = useRef('')
   const latestTranscriptRef = useRef('')
+  const errorShownRef = useRef(false)
   const lastCommandIdRef = useRef<string | null>(null)
 
   // Keep refs current for async processTranscript
@@ -66,7 +67,32 @@ export function useCommandState() {
         setTranscription(text)
       },
       (speechState) => {
+        if (speechState === 'error') {
+          // Mic blocked / recognition failed. Fail LOUD -- the core action must never
+          // dead-tap silently. Surface a message via the normal response path.
+          setTranscription('')
+          finalTranscriptRef.current = ''
+          latestTranscriptRef.current = ''
+          errorShownRef.current = true
+          setResponse({
+            text: 'Microphone blocked. Turn on mic access for Vox in your phone settings, then tap again.',
+            type: 'error',
+            requiresConfirmation: false,
+          })
+          setShowResponse(true)
+          setState('responding')
+          setTimeout(() => {
+            setShowResponse(false)
+            setTimeout(() => {
+              setState('idle')
+              setResponse(null)
+              errorShownRef.current = false
+            }, 300)
+          }, APP_CONFIG.responseDismissMs)
+          return
+        }
         if (speechState === 'idle') {
+          if (errorShownRef.current) return // don't clobber the error message with an idle reset
           const transcript = finalTranscriptRef.current || latestTranscriptRef.current
           if (transcript) {
             processTranscript(transcript)
@@ -216,6 +242,7 @@ export function useCommandState() {
     setTranscription('')
     setResponse(null)
     setShowResponse(false)
+    errorShownRef.current = false
     finalTranscriptRef.current = ''
     latestTranscriptRef.current = ''
     Haptics.light()
@@ -279,6 +306,8 @@ export function useCommandState() {
     ticketActive: ticketHook.isActive,
     isTicketOpen: ticketHook.isOpen,
     ticketStatus: ticketHook.statusText,
+    startTicket: ticketHook.startTicket,
+    addItemManually: ticketHook.addItemManually,
     cancelTicket: ticketHook.cancelTicket,
     sendTicket: ticketHook.sendTicket,
     markTicketDone: ticketHook.markDone,

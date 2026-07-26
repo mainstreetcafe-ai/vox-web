@@ -17,6 +17,10 @@ export default function App() {
   // behind auth + scoped RLS. KDSView/KDSCard/useKDSTickets remain in the tree, unused.
   return (
     <AuthProvider>
+      {/* Vox is a phone tool. On a wide screen, say so instead of floating the phone UI in black. */}
+      <div className="hidden md:flex fixed top-0 inset-x-0 z-50 justify-center bg-maroon/90 text-white text-[13px] py-1.5 px-4 text-center">
+        Vox is built for your phone -- open vox.mainstreetcafe.ai on your device
+      </div>
       <AppInner />
     </AuthProvider>
   )

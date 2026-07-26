@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import { BreathingRing } from '@/components/BreathingRing'
+import { QuickDrinks } from '@/components/QuickActions'
+import { ItemPicker } from '@/components/ItemPicker'
+import { OPEN_TABLE_EVENT, type OpenTableDetail } from '@/services/tableActions'
 import { ResponseCard } from '@/components/ResponseCard'
 import { TicketView } from '@/components/TicketView'
 import { useCommandState } from '@/hooks/useCommandState'
@@ -8,7 +11,18 @@ export function CommandView() {
   const cmd = useCommandState()
   // One-tap "wrong" for the last ticket entry; resets when a new utterance starts.
   const [ticketWrong, setTicketWrong] = useState(false)
+  const [pickerOpen, setPickerOpen] = useState(false)
   useEffect(() => { if (cmd.state === 'listening') setTicketWrong(false) }, [cmd.state])
+
+  // The floor view dispatches "open this table"; the ticket lives here, so act on it.
+  useEffect(() => {
+    const onOpen = (e: Event) => {
+      const d = (e as CustomEvent<OpenTableDetail>).detail
+      if (d?.table) cmd.startTicket(d.table, d.party)
+    }
+    window.addEventListener(OPEN_TABLE_EVENT, onOpen)
+    return () => window.removeEventListener(OPEN_TABLE_EVENT, onOpen)
+  }, [cmd])
 
   const handleRingTap = () => {
     if (cmd.state === 'idle' || cmd.state === 'responding') {
@@ -38,6 +52,27 @@ export function CommandView() {
             onDone={cmd.markTicketDone}
           />
         </div>
+
+        {/* Button path -- works with no network and no speech (the floor of the system). */}
+        {!isSaved && (
+          <div className="px-4 pb-2 shrink-0">
+            <QuickDrinks onAdd={(name, qty) => cmd.addItemManually(name, qty, [])} />
+            <button
+              onClick={() => setPickerOpen(true)}
+              className="w-full mt-2 min-h-[48px] rounded-xl bg-surface active:bg-surface-hover
+                         border border-white/5 text-white text-[15px] font-medium"
+            >
+              Add item from menu
+            </button>
+          </div>
+        )}
+
+        {pickerOpen && (
+          <ItemPicker
+            onClose={() => setPickerOpen(false)}
+            onAdd={(name, qty, mods) => { cmd.addItemManually(name, qty, mods); setPickerOpen(false) }}
+          />
+        )}
 
         {/* Mini ring + status -- only while building. After save the Done button is the exit. */}
         {!isSaved && (
@@ -103,6 +138,21 @@ export function CommandView() {
         {/* Ring */}
         <BreathingRing state={ringState} onTap={handleRingTap} />
       </div>
+
+      {/* Button path on the idle screen -- the emptiest real estate in the app, and
+          the fallback when speech or the tailnet is unavailable. */}
+      {cmd.state === 'idle' && !cmd.showResponse && !cmd.isTicketOpen && (
+        <div className="w-full px-1 pb-3 shrink-0">
+          <QuickDrinks onAdd={(name, qty) => cmd.addItemManually(name, qty, [])} />
+        </div>
+      )}
+
+      {/* Swipe wayfinding -- only while idle, matching the hints on Dashboard + Feed */}
+      {cmd.state === 'idle' && !cmd.showResponse && (
+        <p className="text-gray-dim/60 text-xs text-center mb-2">
+          Swipe right for the floor -- left for the feed
+        </p>
+      )}
 
       {/* Wordmark */}
       <p

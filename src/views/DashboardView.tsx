@@ -1,5 +1,7 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { TableCard } from '@/components/TableCard'
+import { TableActionSheet } from '@/components/QuickActions'
+import { openTableRequest } from '@/services/tableActions'
 import { RecentTicketsList } from '@/components/RecentTicketsList'
 import { shiftContextLine } from '@/lib/time'
 import { useSalesData } from '@/hooks/useSalesData'
@@ -18,7 +20,9 @@ const SECTION_LABELS: Record<string, string> = {
 }
 
 export function DashboardView() {
-  const { staff } = useAuth()
+  const { staff, logout } = useAuth()
+  const [sheetTable, setSheetTable] = useState<string | null>(null)
+  const [activeSection, setActiveSection] = useState<string>('ALL')
   const { latest } = useSalesData()
   const { tables, isLoading } = useTableSessions()
   const { items: eightySixed } = useEightySix()
@@ -59,7 +63,7 @@ export function DashboardView() {
       {/* Header */}
       <div className="flex justify-between items-start px-6 pt-6 pb-2">
         <div>
-          <h1 className="text-white text-2xl font-bold leading-tight">Your Tables</h1>
+          <h1 className="text-white text-2xl font-bold leading-tight">The Floor</h1>
           <p className="text-gray text-[13px] mt-1">
             {staff ? `${staff.name} -- ${shiftContextLine(shiftStart)}` : shiftContextLine(shiftStart)}
           </p>
@@ -67,6 +71,12 @@ export function DashboardView() {
         <div className="text-right">
           <p className="text-white text-lg font-semibold">${shiftTotal.toFixed(2)}</p>
           <p className="text-gray-dim text-[11px]">shift total</p>
+          <button
+            onClick={logout}
+            className="text-gray-dim text-[11px] mt-2 uppercase tracking-wider active:text-error"
+          >
+            Sign out
+          </button>
         </div>
       </div>
 
@@ -102,19 +112,51 @@ export function DashboardView() {
         <p className="text-gray-dim text-[13px] text-center pt-10">Loading tables...</p>
       ) : (
         <div className="px-4 pb-4">
-          {sections.map(({ section, label, tables: sectionTables }) => (
+          {/* Section tabs -- 54 tables is too many to scroll on a busy floor */}
+          {sections.length > 1 && (
+            <div className="flex gap-2 overflow-x-auto pb-3 -mx-1 px-1">
+              {['ALL', ...sections.map(s => s.section)].map(sec => (
+                <button
+                  key={sec}
+                  onClick={() => setActiveSection(sec)}
+                  className={`shrink-0 h-[36px] px-4 rounded-full text-[13px] font-medium border transition-colors ${
+                    activeSection === sec
+                      ? 'bg-maroon border-maroon text-white'
+                      : 'bg-surface border-white/5 text-gray active:bg-surface-hover'
+                  }`}
+                >
+                  {sec === 'ALL' ? 'All' : sec}
+                </button>
+              ))}
+            </div>
+          )}
+          {sections
+            .filter(s => activeSection === 'ALL' || s.section === activeSection)
+            .map(({ section, label, tables: sectionTables }) => (
             <div key={section} className="mb-4">
               <p className="text-gray-dim text-[11px] font-semibold uppercase tracking-wider mb-2 px-1">
                 {label}
               </p>
               <div className="flex flex-col gap-2">
                 {sectionTables.map(table => (
-                  <TableCard key={table.tableNumber} table={table} />
+                  <TableCard
+                    key={table.tableNumber}
+                    table={table}
+                    onTap={t => setSheetTable(t.tableNumber)}
+                  />
                 ))}
               </div>
             </div>
           ))}
         </div>
+      )}
+
+      {sheetTable && (
+        <TableActionSheet
+          table={sheetTable}
+          onClose={() => setSheetTable(null)}
+          onOpenTable={(tbl, party) => { openTableRequest(tbl, party); setSheetTable(null) }}
+        />
       )}
 
       {/* Footer hint */}

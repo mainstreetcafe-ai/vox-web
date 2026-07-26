@@ -1,0 +1,5382 @@
+{
+ "aliases": {
+  "1 biscuits": "1 Biscuit",
+  "1 pc french breads": "1 Pc French Bread",
+  "1 slice toasts": "1 Slice Toast",
+  "16oz salsas": "16oz Salsa",
+  "2 biscuit": "2 Biscuits",
+  "2oz salsas": "2oz Salsa",
+  "8oz salsas": "8oz Salsa",
+  "app fried mushroom": "App Fried Mushrooms",
+  "app fried pickle": "App Fried Pickles",
+  "app fried squashs": "App Fried Squash",
+  "apple juices": "Apple Juice",
+  "arnold palmers": "Arnold Palmer",
+  "avocado chicken salads": "Avocado Chicken Salad",
+  "avocado slice": "Avocado Slices",
+  "avocados": "Avocado",
+  "bacon & cheese omelettes": "Bacon & Cheese Omelette",
+  "bacon cheeseburgers": "Bacon Cheeseburger",
+  "bacons": "Bacon",
+  "bay breezes": "Bay Breeze",
+  "bbq brisket sandwichs": "BBQ Brisket Sandwich",
+  "bellinis": "Bellini",
+  "biscuit & gravy (1)s": "Biscuit & Gravy (1)",
+  "biscuit & gravy (2)s": "Biscuit & Gravy (2)",
+  "black-eyed pea": "Black-Eyed Peas",
+  "blackened redfishs": "Blackened Redfish",
+  "blt sandwichs": "BLT Sandwich",
+  "breakfast taco": "Breakfast Tacos",
+  "buffalo chicken salads": "Buffalo Chicken Salad",
+  "burritos": "Burrito",
+  "buttermilk pancakes": "Buttermilk Pancake",
+  "cafecitos": "Cafecito",
+  "carafe mimosas": "Carafe Mimosa",
+  "catfish & egg": "Catfish & Eggs",
+  "catfish (k)s": "Catfish (K)",
+  "catfish sandwichs": "Catfish Sandwich",
+  "catfishs": "Catfish",
+  "cheese omelets": "Cheese Omelet",
+  "cheese sauces": "Cheese Sauce",
+  "cheeseburgers": "Cheeseburger",
+  "cheesecakes": "Cheesecake",
+  "chef salads": "Chef Salad",
+  "chicken & waffle": "Chicken & Waffles",
+  "chicken fried chicken & egg": "Chicken Fried Chicken & Eggs",
+  "chicken fried steak & egg": "Chicken Fried Steak & Eggs",
+  "chicken salad salads": "Chicken Salad Salad",
+  "chicken salad sandwichs": "Chicken Salad Sandwich",
+  "chicken strip": "Chicken Strips",
+  "chicken strips (k)s": "Chicken Strips (K)",
+  "chilaquile": "Chilaquiles",
+  "chip": "Chips",
+  "chips & homemade salsas": "Chips & Homemade Salsa",
+  "chips & quesos": "Chips & Queso",
+  "chocolate milks": "Chocolate Milk",
+  "chocolate pies": "Chocolate Pie",
+  "chorizos": "Chorizo",
+  "club sandwichs": "Club Sandwich",
+  "coconut pies": "Coconut Pie",
+  "coffee (refill)s": "Coffee (Refill)",
+  "cole slaws": "Cole Slaw",
+  "corn beef & egg": "Corn Beef & Eggs",
+  "corn tortillas": "Corn Tortilla",
+  "cornbread (1)s": "Cornbread (1)",
+  "corns": "Corn",
+  "country fried chickens": "Country Fried Chicken",
+  "country fried steak sandwichs": "Country Fried Steak Sandwich",
+  "country fried steaks": "Country Fried Steak",
+  "cowboy sandwichs": "Cowboy Sandwich",
+  "cranberry juices": "Cranberry Juice",
+  "diet dr. pepper (refill)s": "Diet Dr. Pepper (Refill)",
+  "diet pepsi (refill)s": "Diet Pepsi (Refill)",
+  "dinner salads": "Dinner Salad",
+  "dr. pepper (refill)s": "Dr. Pepper (Refill)",
+  "dressings": "Dressing",
+  "egg sandwich (k)s": "Egg Sandwich (K)",
+  "egg sandwichs": "Egg Sandwich",
+  "egg specials": "Egg Special",
+  "eggs": "Egg",
+  "eggs benedicts": "Eggs Benedict",
+  "el diablos": "El Diablo",
+  "english muffins": "English Muffin",
+  "fajita plates": "Fajita Plate",
+  "farmers omelets": "Farmers Omelet",
+  "flour tortillas": "Flour Tortilla",
+  "french frie": "French Fries",
+  "french toast specials": "French Toast Special",
+  "french toasts": "French Toast",
+  "fried mushrooms (side)s": "Fried Mushrooms (Side)",
+  "fried okras": "Fried Okra",
+  "fried pickle": "Fried Pickles",
+  "fried shrimps": "Fried Shrimp",
+  "fried squash (side)s": "Fried Squash (Side)",
+  "fruit cups": "Fruit Cup",
+  "grand mimosas": "Grand Mimosa",
+  "gravys": "Gravy",
+  "green bean": "Green Beans",
+  "grilled cheese (k)s": "Grilled Cheese (K)",
+  "grilled chick breast & egg": "Grilled Chick Breast & Eggs",
+  "grilled chicken breast onlys": "Grilled Chicken Breast Only",
+  "grilled chicken breasts": "Grilled Chicken Breast",
+  "grilled chicken salads": "Grilled Chicken Salad",
+  "grilled chicken sandwichs": "Grilled Chicken Sandwich",
+  "grilled ham & cheeses": "Grilled Ham & Cheese",
+  "grilled shrimps": "Grilled Shrimp",
+  "grilled turkey & swis": "Grilled Turkey & Swiss",
+  "grits (lg)s": "Grits (LG)",
+  "grits (sm)s": "Grits (SM)",
+  "half french toasts": "Half French Toast",
+  "ham & cheese omelettes": "Ham & Cheese Omelette",
+  "ham & egg": "Ham & Eggs",
+  "ham steaks": "Ham Steak",
+  "hamburger steak & egg": "Hamburger Steak & Eggs",
+  "hamburger steaks": "Hamburger Steak",
+  "hamburgers": "Hamburger",
+  "hams": "Ham",
+  "hashbrown": "Hashbrowns",
+  "home chip": "Home Chips",
+  "hot apple pie & ice creams": "Hot Apple Pie & Ice Cream",
+  "hot chocolates": "Hot Chocolate",
+  "hot fudge brownie & ice creams": "Hot Fudge Brownie & Ice Cream",
+  "hot teas": "Hot Tea",
+  "huevos ranchero": "Huevos Rancheros",
+  "hush puppie": "Hush Puppies",
+  "ice creams": "Ice Cream",
+  "jalapeno catfishs": "Jalapeno Catfish",
+  "jalapeno chickens": "Jalapeno Chicken",
+  "lemon pies": "Lemon Pie",
+  "lemonade (refill)s": "Lemonade (Refill)",
+  "luci salads": "Luci Salad",
+  "macaroni & cheeses": "Macaroni & Cheese",
+  "main st bloody marys": "Main St Bloody Mary",
+  "main st mimosas": "Main St Mimosa",
+  "margaritas": "Margarita",
+  "mashed potatoes & gravys": "Mashed Potatoes & Gravy",
+  "mashed potatoes drys": "Mashed Potatoes Dry",
+  "mexican scramblers": "Mexican Scrambler",
+  "miga": "Migas",
+  "mike's specials": "Mike's Special",
+  "milks": "Milk",
+  "mini egg special (k)s": "Mini Egg Special (K)",
+  "mini pancake special (k)s": "Mini Pancake Special (K)",
+  "moscow mules": "Moscow Mule",
+  "nacho": "Nachos",
+  "oatmeal (lg)s": "Oatmeal (LG)",
+  "oatmeal (sm)s": "Oatmeal (SM)",
+  "omelettes": "Omelette",
+  "one pork chop & egg": "One Pork Chop & Eggs",
+  "one pork chops": "One Pork Chop",
+  "onion ring": "Onion Rings",
+  "open-faced roast beefs": "Open-Faced Roast Beef",
+  "orange juices": "Orange Juice",
+  "orange soda (refill)s": "Orange Soda (Refill)",
+  "pancake specials": "Pancake Special",
+  "patty melts": "Patty Melt",
+  "pcc & egg": "PCC & Eggs",
+  "pcc breadings": "PCC Breading",
+  "peanut butters": "Peanut Butter",
+  "pepsi (refill)s": "Pepsi (Refill)",
+  "pinto bean": "Pinto Beans",
+  "potato chip": "Potato Chips",
+  "potato chip chicken strip": "Potato Chip Chicken Strips",
+  "potato chip chickens": "Potato Chip Chicken",
+  "potato salads": "Potato Salad",
+  "quesadillas": "Quesadilla",
+  "ray specials": "Ray Special",
+  "refried bean": "Refried Beans",
+  "ribeye steaks": "Ribeye Steak",
+  "roasted potatoe": "Roasted Potatoes",
+  "rumplemint": "Rumplemints",
+  "salmon salads": "Salmon Salad",
+  "sauces": "Sauce",
+  "sausage & cheese omelettes": "Sausage & Cheese Omelette",
+  "sausage (1)s": "Sausage (1)",
+  "sausages": "Sausage",
+  "sautee veggie": "Sautee Veggies",
+  "screw drivers": "Screw Driver",
+  "shirley temples": "Shirley Temple",
+  "shrimp salads": "Shrimp Salad",
+  "side cream cheeses": "Side Cream Cheese",
+  "side jalapeno": "Side Jalapenos",
+  "side pico de gallos": "Side Pico De Gallo",
+  "side salads": "Side Salad",
+  "sierra mist (refill)s": "Sierra Mist (Refill)",
+  "sinful chicken sandwichs": "Sinful Chicken Sandwich",
+  "sirloin steak & egg": "Sirloin Steak & Eggs",
+  "sirloin steak & shrimps": "Sirloin Steak & Shrimp",
+  "sirloin steaks": "Sirloin Steak",
+  "small ranchero": "Small Rancheros",
+  "smiley pancakes (k)s": "Smiley Pancakes (K)",
+  "sour creams": "Sour Cream",
+  "southwest chickens": "Southwest Chicken",
+  "spanish omelets": "Spanish Omelet",
+  "steamed broccolis": "Steamed Broccoli",
+  "steamed spinachs": "Steamed Spinach",
+  "sweet ice tea (refill)s": "Sweet Ice Tea (Refill)",
+  "sweet potato frie": "Sweet Potato Fries",
+  "syrups": "Syrup",
+  "taco salads": "Taco Salad",
+  "tator tot": "Tator Tots",
+  "texas peach teas": "Texas Peach Tea",
+  "texas scramblers": "Texas Scrambler",
+  "tito": "Titos",
+  "toasts": "Toast",
+  "tomato juices": "Tomato Juice",
+  "tomato slice": "Tomato Slices",
+  "topo chicos": "Topo Chico",
+  "tropical salmons": "Tropical Salmon",
+  "tuna salad salads": "Tuna Salad Salad",
+  "tuna salad sandwichs": "Tuna Salad Sandwich",
+  "turkeys": "Turkey",
+  "two pork chop": "Two Pork Chops",
+  "two pork chops & egg": "Two Pork Chops & Eggs",
+  "unsweet ice tea (refill)s": "Unsweet Ice Tea (Refill)",
+  "veggie beef soup bowls": "Veggie Beef Soup Bowl",
+  "veggie beef soup cups": "Veggie Beef Soup Cup",
+  "veggie omelets": "Veggie Omelet",
+  "veggie plates": "Veggie Plate",
+  "veracruz tilapias": "Veracruz Tilapia",
+  "waffle specials": "Waffle Special",
+  "waffles": "Waffle",
+  "well vodkas": "Well Vodka",
+  "western omelets": "Western Omelet",
+  "whole jalapenos": "Whole Jalapeno",
+  "whole peppers": "Whole Pepper"
+ },
+ "built_from": {
+  "menu_items": 223,
+  "modifier_rows": 40590,
+  "unparsed_rate": 0.0
+ },
+ "global_modifiers": [
+  {
+   "freq": 5802,
+   "name": "Scrambled",
+   "price": 0.0
+  },
+  {
+   "freq": 4738,
+   "name": "Hash Browns",
+   "price": 2.75
+  },
+  {
+   "freq": 4260,
+   "name": "Bacon",
+   "price": 0.0
+  },
+  {
+   "freq": 3210,
+   "name": "French Fries",
+   "price": 0.0
+  },
+  {
+   "freq": 3118,
+   "name": "Over Medium",
+   "price": 0.0
+  },
+  {
+   "freq": 2876,
+   "name": "Roasted Potatoes",
+   "price": 0.0
+  },
+  {
+   "freq": 2780,
+   "name": "Sausage",
+   "price": 0.0
+  },
+  {
+   "freq": 2748,
+   "name": "M/P & Gravy",
+   "price": 0.0
+  },
+  {
+   "freq": 2346,
+   "name": "Over Easy",
+   "price": 0.0
+  },
+  {
+   "freq": 2092,
+   "name": "Crispy Bacon",
+   "price": 0.0
+  },
+  {
+   "freq": 2064,
+   "name": "White",
+   "price": 0.0
+  },
+  {
+   "freq": 1872,
+   "name": "Fried Okra",
+   "price": 0.0
+  },
+  {
+   "freq": 1800,
+   "name": "Sour Dough",
+   "price": 0.0
+  },
+  {
+   "freq": 1742,
+   "name": "Wheat",
+   "price": 0.0
+  },
+  {
+   "freq": 1714,
+   "name": "Homemade Ranch",
+   "price": 0.0
+  },
+  {
+   "freq": 1504,
+   "name": "Corn",
+   "price": 0.0
+  },
+  {
+   "freq": 1438,
+   "name": "Biscuit & Gravy (2)",
+   "price": 0.0
+  },
+  {
+   "freq": 1392,
+   "name": "English Muffin",
+   "price": 1.99
+  },
+  {
+   "freq": 1298,
+   "name": "Green Beans",
+   "price": 0.0
+  },
+  {
+   "freq": 1226,
+   "name": "Macaroni & Cheese",
+   "price": 0.0
+  },
+  {
+   "freq": 1216,
+   "name": "Sweet Potato Fries",
+   "price": 0.0
+  },
+  {
+   "freq": 944,
+   "name": "Broccoli",
+   "price": 0.0
+  },
+  {
+   "freq": 848,
+   "name": "Blueberries",
+   "price": 1.0
+  },
+  {
+   "freq": 846,
+   "name": "Chocolate Chips",
+   "price": 1.0
+  },
+  {
+   "freq": 826,
+   "name": "Side Salad",
+   "price": 0.0
+  },
+  {
+   "freq": 816,
+   "name": "Onion Rings",
+   "price": 0.0
+  },
+  {
+   "freq": 740,
+   "name": "Fried Mushrooms",
+   "price": 0.0
+  },
+  {
+   "freq": 648,
+   "name": "Cole Slaw",
+   "price": 0.0
+  },
+  {
+   "freq": 642,
+   "name": "Spinach",
+   "price": 0.0
+  },
+  {
+   "freq": 640,
+   "name": "Fruit",
+   "price": 0.0
+  },
+  {
+   "freq": 634,
+   "name": "Over Hard",
+   "price": 0.0
+  },
+  {
+   "freq": 620,
+   "name": "Flour Tortilla",
+   "price": 0.0
+  },
+  {
+   "freq": 618,
+   "name": "Flour",
+   "price": 0.0
+  },
+  {
+   "freq": 618,
+   "name": "Home Chips",
+   "price": 0.0
+  },
+  {
+   "freq": 616,
+   "name": "No Bread",
+   "price": 0.0
+  },
+  {
+   "freq": 592,
+   "name": "Spanish Rice",
+   "price": 0.0
+  },
+  {
+   "freq": 578,
+   "name": "Black-Eyed Peas",
+   "price": 0.0
+  },
+  {
+   "freq": 572,
+   "name": "No Onions",
+   "price": 0.0
+  },
+  {
+   "freq": 566,
+   "name": "Grits",
+   "price": 0.0
+  },
+  {
+   "freq": 564,
+   "name": "Tator Tots",
+   "price": 0.0
+  },
+  {
+   "freq": 560,
+   "name": "Fried Squash",
+   "price": 0.0
+  },
+  {
+   "freq": 522,
+   "name": "Sunny Side Up",
+   "price": 0.0
+  },
+  {
+   "freq": 522,
+   "name": "Toast",
+   "price": 0.0
+  },
+  {
+   "freq": 506,
+   "name": "Mashed Potatoes Dry",
+   "price": 0.0
+  },
+  {
+   "freq": 498,
+   "name": "Pecans",
+   "price": 1.0
+  },
+  {
+   "freq": 498,
+   "name": "Pinto Beans",
+   "price": 0.0
+  },
+  {
+   "freq": 492,
+   "name": "Corn Tortilla",
+   "price": 0.0
+  },
+  {
+   "freq": 488,
+   "name": "Medium",
+   "price": 0.0
+  },
+  {
+   "freq": 466,
+   "name": "Tomato Slices",
+   "price": 0.0
+  },
+  {
+   "freq": 460,
+   "name": "Refried Beans",
+   "price": 0.0
+  },
+  {
+   "freq": 448,
+   "name": "Biscuit & Gravy (1)",
+   "price": 0.0
+  },
+  {
+   "freq": 430,
+   "name": "No Tomato",
+   "price": 0.0
+  },
+  {
+   "freq": 426,
+   "name": "Add One Egg",
+   "price": 1.5
+  },
+  {
+   "freq": 422,
+   "name": "Ham",
+   "price": 1.0
+  },
+  {
+   "freq": 400,
+   "name": "Medium Rare",
+   "price": 0.0
+  },
+  {
+   "freq": 392,
+   "name": "Scrambled Soft",
+   "price": 0.0
+  },
+  {
+   "freq": 392,
+   "name": "Scrambled Well",
+   "price": 0.0
+  },
+  {
+   "freq": 390,
+   "name": "Medium Well",
+   "price": 0.0
+  },
+  {
+   "freq": 390,
+   "name": "No Mayo",
+   "price": 0.0
+  },
+  {
+   "freq": 372,
+   "name": "Fried Pickles",
+   "price": 0.0
+  },
+  {
+   "freq": 368,
+   "name": "Well Done",
+   "price": 0.0
+  },
+  {
+   "freq": 346,
+   "name": "Texas Toast",
+   "price": 0.0
+  },
+  {
+   "freq": 314,
+   "name": "Soft Bacon",
+   "price": 0.0
+  },
+  {
+   "freq": 308,
+   "name": "Add Cheese To Egg",
+   "price": 0.6
+  },
+  {
+   "freq": 302,
+   "name": "Over Medium Well",
+   "price": 0.0
+  },
+  {
+   "freq": 302,
+   "name": "Rice Pilaf",
+   "price": 0.0
+  },
+  {
+   "freq": 288,
+   "name": "Balsamic",
+   "price": 0.0
+  },
+  {
+   "freq": 284,
+   "name": "Medium Bacon",
+   "price": 0.0
+  },
+  {
+   "freq": 270,
+   "name": "Roast Pot No Onions",
+   "price": 0.0
+  },
+  {
+   "freq": 256,
+   "name": "Brown Sugar",
+   "price": 0.0
+  },
+  {
+   "freq": 256,
+   "name": "Grilled",
+   "price": 0.0
+  },
+  {
+   "freq": 218,
+   "name": "Dry",
+   "price": 0.0
+  },
+  {
+   "freq": 216,
+   "name": "Potato Salad",
+   "price": 0.0
+  },
+  {
+   "freq": 212,
+   "name": "Add Mustard",
+   "price": 0.0
+  },
+  {
+   "freq": 210,
+   "name": "Add Mayo",
+   "price": 0.0
+  },
+  {
+   "freq": 202,
+   "name": "No Sides",
+   "price": 0.0
+  },
+  {
+   "freq": 198,
+   "name": "Rye",
+   "price": 0.0
+  },
+  {
+   "freq": 194,
+   "name": "Add Two Eggs",
+   "price": 3.0
+  },
+  {
+   "freq": 184,
+   "name": "Strawberries",
+   "price": 1.0
+  },
+  {
+   "freq": 176,
+   "name": "Blue Cheese",
+   "price": 0.0
+  },
+  {
+   "freq": 172,
+   "name": "Strawberry",
+   "price": 1.0
+  },
+  {
+   "freq": 170,
+   "name": "Corn & Flour Trll",
+   "price": 0.0
+  },
+  {
+   "freq": 168,
+   "name": "Honey Mustard",
+   "price": 0.0
+  },
+  {
+   "freq": 164,
+   "name": "No Egg",
+   "price": 0.0
+  },
+  {
+   "freq": 164,
+   "name": "Raisins",
+   "price": 0.0
+  },
+  {
+   "freq": 160,
+   "name": "Dirty Rice",
+   "price": 0.0
+  },
+  {
+   "freq": 158,
+   "name": "No Lettuce",
+   "price": 0.0
+  },
+  {
+   "freq": 144,
+   "name": "Bananas",
+   "price": 1.0
+  },
+  {
+   "freq": 142,
+   "name": "Sub Hashbrown",
+   "price": 0.0
+  },
+  {
+   "freq": 140,
+   "name": "Scrambled Medium",
+   "price": 0.0
+  },
+  {
+   "freq": 138,
+   "name": "No Meat",
+   "price": 0.0
+  },
+  {
+   "freq": 134,
+   "name": "NO Dressing",
+   "price": 0.0
+  },
+  {
+   "freq": 130,
+   "name": "Beef",
+   "price": 0.0
+  },
+  {
+   "freq": 128,
+   "name": "1000 Island",
+   "price": 0.0
+  },
+  {
+   "freq": 128,
+   "name": "Biscuits (2)",
+   "price": 0.0
+  },
+  {
+   "freq": 124,
+   "name": "Hashbrowns w/ Cheese",
+   "price": 0.6
+  },
+  {
+   "freq": 120,
+   "name": "Grits w/ cheese",
+   "price": 0.6
+  },
+  {
+   "freq": 120,
+   "name": "No Pickles",
+   "price": 0.0
+  },
+  {
+   "freq": 118,
+   "name": "Saute Veggies",
+   "price": 0.0
+  },
+  {
+   "freq": 112,
+   "name": "Sub Chorizo",
+   "price": 1.0
+  }
+ ],
+ "items": [
+  {
+   "name": "1 Biscuit",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "1 Pc French Bread",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "1 Slice Toast",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "16oz Salsa",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "2 Biscuits",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "2oz Salsa",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "8oz Salsa",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "App Fried Mushrooms",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "App Fried Pickles",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "App Fried Squash",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Apple Juice",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Arnold Palmer",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Avocado",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Avocado Chicken Salad",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Avocado Slices",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "BBQ Brisket Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Add American Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Mayo",
+       "price": 0.0
+      }
+     ],
+     "set": "Sandwich Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Swiss Chee",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "American Chee",
+       "price": 0.0
+      }
+     ],
+     "set": "Sandwich No"
+    }
+   ]
+  },
+  {
+   "name": "BLT Sandwich",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Bacon",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Bacon & Cheese Omelette",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "(B/C) Omlt NO"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 23,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 13,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 12,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 9,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 8,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 7,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 3,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 3,
+       "name": "Bell Peppers",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Ham $",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 2,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 1,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Roasted Potatoes",
+       "price": 1.0
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "Bacon Cheeseburger",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Bay Breeze",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Bellini",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Biscuit & Gravy (1)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Biscuit & Gravy (2)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Black-Eyed Peas",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Blackened Redfish",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Breakfast Tacos",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 20,
+       "name": "Roasted Potatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 12,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Eggs",
+       "price": 0.0
+      }
+     ],
+     "set": "Breakfast Tacos NO"
+    }
+   ]
+  },
+  {
+   "name": "Buffalo Chicken Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Red Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Celery",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Boiled Egg",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Cucumbers",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.0
+      }
+     ],
+     "set": "(D) Salad No"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Pico De Gallo",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Add Jalapeno",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Corn",
+       "price": 1.0
+      },
+      {
+       "freq": 1,
+       "name": "Cucumbers",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Red Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Tortilla Strips",
+       "price": 0.5
+      }
+     ],
+     "set": "Salad Extras"
+    }
+   ]
+  },
+  {
+   "name": "Burrito",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 8,
+       "name": "No Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "No Egg",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "No Meat",
+       "price": 0.0
+      }
+     ],
+     "set": "Burrito NO"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 53,
+       "name": "Roasted Potatoes",
+       "price": 1.0
+      },
+      {
+       "freq": 49,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 42,
+       "name": "Hash Browns",
+       "price": 1.0
+      },
+      {
+       "freq": 34,
+       "name": "Spicy Salsa",
+       "price": 0.0
+      },
+      {
+       "freq": 32,
+       "name": "Mushroom",
+       "price": 0.25
+      },
+      {
+       "freq": 28,
+       "name": "Refried Beans",
+       "price": 1.99
+      },
+      {
+       "freq": 24,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 18,
+       "name": "Sausage",
+       "price": 1.99
+      },
+      {
+       "freq": 17,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 16,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 15,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 12,
+       "name": "Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 12,
+       "name": "Bell Peppers",
+       "price": 0.25
+      },
+      {
+       "freq": 10,
+       "name": "Add One Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 7,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 7,
+       "name": "Ham",
+       "price": 1.99
+      },
+      {
+       "freq": 6,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 2,
+       "name": "Add Two Eggs",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Ground Beef",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Chicken",
+       "price": 2.99
+      }
+     ],
+     "set": "Burrto Add Ons"
+    }
+   ]
+  },
+  {
+   "name": "Buttermilk Pancake",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Cafecito",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Carafe Mimosa",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 18,
+       "name": "Orange Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 9,
+       "name": "Pinapple Juice",
+       "price": 0.0
+      }
+     ],
+     "set": "Mixer"
+    }
+   ]
+  },
+  {
+   "name": "Catfish",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Texas Toast",
+       "price": 0.99
+      },
+      {
+       "freq": 2,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "French Bread",
+       "price": 0.99
+      }
+     ],
+     "set": "Entree Add"
+    }
+   ]
+  },
+  {
+   "name": "Catfish & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Catfish (K)",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Catfish Sandwich",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Cheese Omelet",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 8,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 6,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 2,
+       "name": "Ham",
+       "price": 2.0
+      }
+     ],
+     "set": "Chee Om Meat"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "Cheese Omlt NO"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 5,
+       "name": "Mushroom",
+       "price": 0.25
+      },
+      {
+       "freq": 5,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 4,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 3,
+       "name": "Bell Peppers",
+       "price": 1.0
+      },
+      {
+       "freq": 2,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Chicken",
+       "price": 2.99
+      },
+      {
+       "freq": 2,
+       "name": "Ham $",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Sausage",
+       "price": 1.99
+      },
+      {
+       "freq": 2,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 1,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Egg Whites",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Ground Beef",
+       "price": 1.99
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "Cheese Sauce",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Cheeseburger",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Cheesecake",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Chef Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Boiled Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 1,
+       "name": "Cheddar Cheese",
+       "price": 0.6
+      }
+     ],
+     "set": "Salad Extras"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 21,
+       "name": "Red Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 8,
+       "name": "Croutons",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Sour Cream",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Taco Meat",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Avocado",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Cornbread",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Cucumbers",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Carrots",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Ham",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Turkey",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad No"
+    }
+   ]
+  },
+  {
+   "name": "Chicken & Waffles",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 6,
+       "name": "Chicken",
+       "price": 2.0
+      }
+     ],
+     "set": "Pan/Waf/Fr Add"
+    }
+   ]
+  },
+  {
+   "name": "Chicken Fried Chicken & Eggs",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "No Gravy",
+       "price": 0.0
+      }
+     ],
+     "set": "Eggs & Such NO"
+    }
+   ]
+  },
+  {
+   "name": "Chicken Fried Steak & Eggs",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "No Gravy",
+       "price": 0.0
+      }
+     ],
+     "set": "Eggs & Such NO"
+    }
+   ]
+  },
+  {
+   "name": "Chicken Salad Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Red Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Cucumbers",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad No"
+    }
+   ]
+  },
+  {
+   "name": "Chicken Salad Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 15,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "Lettuce",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad Sandwich NO"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Add American Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 3,
+       "name": "Pickles",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Swiss Chee",
+       "price": 0.6
+      }
+     ],
+     "set": "Sandwich Add"
+    }
+   ]
+  },
+  {
+   "name": "Chicken Strips",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Texas Toast",
+       "price": 0.99
+      }
+     ],
+     "set": "Entree Add"
+    }
+   ]
+  },
+  {
+   "name": "Chicken Strips (K)",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Chilaquiles",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Chips",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Chips & Homemade Salsa",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Chips & Queso",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Chocolate Milk",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Chocolate Pie",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Chorizo",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Club Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 51,
+       "name": "No Tomato",
+       "price": 0.0
+      },
+      {
+       "freq": 16,
+       "name": "No Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 16,
+       "name": "No Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 9,
+       "name": "No Bacon",
+       "price": 0.0
+      },
+      {
+       "freq": 8,
+       "name": "No Swiss Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "No American Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "No Ham",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "No Turkey",
+       "price": 0.0
+      }
+     ],
+     "set": "Club Sandwich Modifications"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 23,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 15,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "Pickles",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 3,
+       "name": "Add Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "DOUBLE MEAT",
+       "price": 2.0
+      },
+      {
+       "freq": 2,
+       "name": "Add American Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 2,
+       "name": "Add Jalapeno",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Plain & Dry",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Swiss Chee",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.75
+      }
+     ],
+     "set": "Sandwich Add"
+    }
+   ]
+  },
+  {
+   "name": "Coconut Pie",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Coffee (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Cole Slaw",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Corn",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Corn Beef & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Corn Tortilla",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Cornbread (1)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Country Fried Chicken",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 13,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Texas Toast",
+       "price": 0.99
+      },
+      {
+       "freq": 1,
+       "name": "French Bread",
+       "price": 0.99
+      }
+     ],
+     "set": "Entree Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 16,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "French Bread",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Brown Gravy",
+       "price": 0.0
+      }
+     ],
+     "set": "Entree NO"
+    }
+   ]
+  },
+  {
+   "name": "Country Fried Steak",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 26,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 10,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 9,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 8,
+       "name": "French Bread",
+       "price": 0.0
+      }
+     ],
+     "set": "Entree NO"
+    }
+   ]
+  },
+  {
+   "name": "Country Fried Steak Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 5,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Add American Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 3,
+       "name": "Mustard",
+       "price": 0.0
+      }
+     ],
+     "set": "Chkn Frd Sandwch Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 11,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Pickles",
+       "price": 0.0
+      }
+     ],
+     "set": "Sandwich No"
+    }
+   ]
+  },
+  {
+   "name": "Cowboy Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Add American Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Add Extra Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Pickles",
+       "price": 0.25
+      }
+     ],
+     "set": "Cowboy Sndwch Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 6,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "American Chee",
+       "price": 0.0
+      }
+     ],
+     "set": "Sandwich No"
+    }
+   ]
+  },
+  {
+   "name": "Cranberry Juice",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Diet Dr. Pepper (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Diet Pepsi (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Dinner Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Cheese",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Egg",
+       "price": 1.5
+      }
+     ],
+     "set": "Salad Add"
+    }
+   ]
+  },
+  {
+   "name": "Dr. Pepper (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Dressing",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Egg",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 196,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 80,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 52,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      },
+      {
+       "freq": 23,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 14,
+       "name": "Add Three Eggs",
+       "price": 4.5
+      },
+      {
+       "freq": 13,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 10,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 7,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Spinach",
+       "price": 1.25
+      },
+      {
+       "freq": 3,
+       "name": "Add Diced Ham",
+       "price": 1.99
+      },
+      {
+       "freq": 3,
+       "name": "Bell Peppers",
+       "price": 0.75
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Egg Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 23,
+       "name": "Cheddar",
+       "price": 0.0
+      },
+      {
+       "freq": 17,
+       "name": "American",
+       "price": 0.0
+      },
+      {
+       "freq": 11,
+       "name": "Pepperjack",
+       "price": 0.0
+      }
+     ],
+     "set": "Cheese Type"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 19,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 16,
+       "name": "Add Tom",
+       "price": 0.25
+      },
+      {
+       "freq": 16,
+       "name": "Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 15,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 10,
+       "name": "Lettuce",
+       "price": 0.25
+      },
+      {
+       "freq": 9,
+       "name": "Add Onion",
+       "price": 0.25
+      },
+      {
+       "freq": 5,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Sausage",
+       "price": 1.99
+      },
+      {
+       "freq": 3,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 1,
+       "name": "No Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "Egg Sandwich ADD"
+    }
+   ]
+  },
+  {
+   "name": "Egg Sandwich (K)",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Add Tom",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Sausage",
+       "price": 1.99
+      },
+      {
+       "freq": 2,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 2,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Bacon",
+       "price": 1.99
+      }
+     ],
+     "set": "Egg Sandwich ADD"
+    }
+   ]
+  },
+  {
+   "name": "Egg Special",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 32,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 15,
+       "name": "Add Three Eggs",
+       "price": 4.5
+      },
+      {
+       "freq": 8,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 7,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 6,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      },
+      {
+       "freq": 6,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 5,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Bell Peppers",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Spinach",
+       "price": 1.25
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Eggs Benedict",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 210,
+       "name": "Traditional",
+       "price": 0.0
+      },
+      {
+       "freq": 22,
+       "name": "California",
+       "price": 0.0
+      },
+      {
+       "freq": 9,
+       "name": "Florentine",
+       "price": 0.0
+      }
+     ],
+     "set": "Benedict"
+    }
+   ]
+  },
+  {
+   "name": "El Diablo",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Salt",
+       "price": 0.0
+      }
+     ],
+     "set": "Rim Choice"
+    }
+   ]
+  },
+  {
+   "name": "English Muffin",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Fajita Plate",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 11,
+       "name": "Double Rice",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "No Bell Peppers",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "No Onions",
+       "price": 0.0
+      }
+     ],
+     "set": "Fajita Mods"
+    }
+   ]
+  },
+  {
+   "name": "Farmers Omelet",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 27,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Hash Browns",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "No Meat",
+       "price": 0.0
+      }
+     ],
+     "set": "Farm Omlt NO"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 28,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 20,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 16,
+       "name": "Bell Peppers",
+       "price": 1.0
+      },
+      {
+       "freq": 16,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 10,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 10,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 9,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 7,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 7,
+       "name": "Ham $",
+       "price": 2.5
+      },
+      {
+       "freq": 5,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 5,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 3,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Add Two Eggs",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Egg Whites",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Roasted Potatoes",
+       "price": 1.0
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "Flour Tortilla",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "French Fries",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "French Toast",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "French Toast Special",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 63,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 9,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 4,
+       "name": "Bell Peppers",
+       "price": 0.75
+      },
+      {
+       "freq": 3,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      },
+      {
+       "freq": 1,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Mushroom",
+       "price": 0.25
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Fried Mushrooms (Side)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Fried Okra",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Fried Pickles",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Fried Shrimp",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Fried Squash (Side)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Fruit Cup",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Grand Mimosa",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Orange",
+       "price": 0.0
+      }
+     ],
+     "set": "Garnish"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Orange Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Cranberry Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Pinapple Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Strawberry Puree",
+       "price": 0.0
+      }
+     ],
+     "set": "Mixer"
+    }
+   ]
+  },
+  {
+   "name": "Gravy",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Green Beans",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Grilled Cheese (K)",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Add Extra Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 4,
+       "name": "Pickles",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Swiss Chee",
+       "price": 0.6
+      }
+     ],
+     "set": "Sandwich Add"
+    }
+   ]
+  },
+  {
+   "name": "Grilled Chick Breast & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Grilled Chicken Breast",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 6,
+       "name": "Mixed Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Homemade Ranch",
+       "price": 0.35
+      },
+      {
+       "freq": 1,
+       "name": "Lemon Cream Sauce",
+       "price": 0.35
+      },
+      {
+       "freq": 1,
+       "name": "Pico De Gallo",
+       "price": 0.35
+      }
+     ],
+     "set": "Entree (D) Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Texas Toast",
+       "price": 0.99
+      }
+     ],
+     "set": "Entree Add"
+    }
+   ]
+  },
+  {
+   "name": "Grilled Chicken Breast Only",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Grilled Chicken Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 6,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Boiled Egg",
+       "price": 1.25
+      }
+     ],
+     "set": "Salad Extras"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 24,
+       "name": "Red Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Cucumbers",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Croutons",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Egg",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Avocado",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Taco Meat",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad No"
+    }
+   ]
+  },
+  {
+   "name": "Grilled Chicken Sandwich",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Grilled Ham & Cheese",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 5,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Add Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Lettuce",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Mushroom",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      }
+     ],
+     "set": "Sandwich Add"
+    }
+   ]
+  },
+  {
+   "name": "Grilled Shrimp",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Grilled Turkey & Swiss",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Pickles",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Add Extra Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Add Jalapeno",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Lettuce",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      }
+     ],
+     "set": "Sandwich Add"
+    }
+   ]
+  },
+  {
+   "name": "Grits (LG)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Grits (SM)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Half French Toast",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Ham",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Ham & Cheese Omelette",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 17,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 16,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 11,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 7,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 5,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 5,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 4,
+       "name": "Roasted Potatoes",
+       "price": 1.0
+      },
+      {
+       "freq": 4,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 3,
+       "name": "Ham $",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 1,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Egg Whites",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "Ham & Eggs",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 2,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Bell Peppers",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.75
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Ham Steak",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Brown Gravy",
+       "price": 0.0
+      }
+     ],
+     "set": "Entree Add"
+    }
+   ]
+  },
+  {
+   "name": "Hamburger",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Hamburger Steak",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Hamburger Steak & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Hashbrowns",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Home Chips",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Hot Apple Pie & Ice Cream",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Hot Chocolate",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Hot Fudge Brownie & Ice Cream",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Hot Tea",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Huevos Rancheros",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Hush Puppies",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Ice Cream",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Jalapeno Catfish",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Pico De Gallo",
+       "price": 0.35
+      },
+      {
+       "freq": 1,
+       "name": "French Bread",
+       "price": 0.5
+      }
+     ],
+     "set": "Entree (D) Add"
+    }
+   ]
+  },
+  {
+   "name": "Jalapeno Chicken",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Homemade Ranch",
+       "price": 0.35
+      },
+      {
+       "freq": 1,
+       "name": "Avo Cream Sauce",
+       "price": 1.0
+      }
+     ],
+     "set": "Entree (D) Add"
+    }
+   ]
+  },
+  {
+   "name": "Lemon Pie",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Lemonade (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Luci Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Cheddar Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Feta Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Mozz Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Tortilla Strips",
+       "price": 0.0
+      }
+     ],
+     "set": "(D) Salad No"
+    }
+   ]
+  },
+  {
+   "name": "Macaroni & Cheese",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Main St Bloody Mary",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Lime",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Olive 2",
+       "price": 0.0
+      }
+     ],
+     "set": "Garnish"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 17,
+       "name": "Spicy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "As Shot",
+       "price": 0.0
+      }
+     ],
+     "set": "Prep"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 12,
+       "name": "Salt",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "No Salt",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Tajin",
+       "price": 0.0
+      }
+     ],
+     "set": "Rim Choice"
+    }
+   ]
+  },
+  {
+   "name": "Main St Mimosa",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 20,
+       "name": "Orange",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Cherry",
+       "price": 0.0
+      }
+     ],
+     "set": "Garnish"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 108,
+       "name": "Orange Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 77,
+       "name": "Pinapple Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 62,
+       "name": "Cranberry Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 6,
+       "name": "Grapefruit Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Strawberry Puree",
+       "price": 0.0
+      }
+     ],
+     "set": "Mixer"
+    }
+   ]
+  },
+  {
+   "name": "Margarita",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 8,
+       "name": "Salt",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "No Salt",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Sugar",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Tajin",
+       "price": 0.0
+      }
+     ],
+     "set": "Rim Choice"
+    }
+   ]
+  },
+  {
+   "name": "Mashed Potatoes & Gravy",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Mashed Potatoes Dry",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Mexican Scrambler",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Migas",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 5,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 4,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 4,
+       "name": "Fresh Jalapenos",
+       "price": 0.5
+      },
+      {
+       "freq": 3,
+       "name": "Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 2,
+       "name": "Bell Peppers",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Ground Beef",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Add One Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 1,
+       "name": "Mushroom",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Sausage",
+       "price": 1.99
+      }
+     ],
+     "set": "Migas Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 8,
+       "name": "No Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 8,
+       "name": "No Onions",
+       "price": 0.0
+      }
+     ],
+     "set": "Migas NO"
+    }
+   ]
+  },
+  {
+   "name": "Mike's Special",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Add Cheese To Egg",
+       "price": 0.6
+      },
+      {
+       "freq": 2,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Bell Peppers",
+       "price": 0.25
+      }
+     ],
+     "set": "Egg Add On"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 14,
+       "name": "Mushroom",
+       "price": 0.0
+      },
+      {
+       "freq": 6,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Ham",
+       "price": 0.0
+      }
+     ],
+     "set": "Mike's Special NO"
+    }
+   ]
+  },
+  {
+   "name": "Milk",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Mini Egg Special (K)",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 9,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      },
+      {
+       "freq": 5,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 3,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Bell Peppers",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.25
+      }
+     ],
+     "set": "Egg Add On"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 62,
+       "name": "Toast",
+       "price": 0.0
+      },
+      {
+       "freq": 26,
+       "name": "Biscuit (1)",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "2 Corn Tortillas",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "2 Flour Tortillas",
+       "price": 0.0
+      }
+     ],
+     "set": "Kids Bread Choice"
+    }
+   ]
+  },
+  {
+   "name": "Mini Pancake Special (K)",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 13,
+       "name": "Add Cheese To Egg",
+       "price": 0.68
+      },
+      {
+       "freq": 13,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 1,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Moscow Mule",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Nachos",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Lettuce",
+       "price": 0.0
+      }
+     ],
+     "set": "Nacho Extras"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 23,
+       "name": "Fajita",
+       "price": 0.0
+      },
+      {
+       "freq": 22,
+       "name": "Ground Beef",
+       "price": 0.0
+      },
+      {
+       "freq": 18,
+       "name": "Chicken",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "No Meat",
+       "price": 0.0
+      }
+     ],
+     "set": "Nacho Meat"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 10,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 7,
+       "name": "Jalape\u00f1os",
+       "price": 0.0
+      },
+      {
+       "freq": 6,
+       "name": "Pinto Beans",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Avocado",
+       "price": 0.0
+      }
+     ],
+     "set": "Nacho No"
+    }
+   ]
+  },
+  {
+   "name": "Oatmeal (LG)",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Oatmeal (SM)",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Omelette",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 35,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 17,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 14,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 13,
+       "name": "Bell Peppers",
+       "price": 1.0
+      },
+      {
+       "freq": 13,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 12,
+       "name": "Ham $",
+       "price": 2.5
+      },
+      {
+       "freq": 10,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 10,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 9,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 6,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 5,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 5,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 4,
+       "name": "Ground Beef",
+       "price": 1.99
+      },
+      {
+       "freq": 4,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Taco Meat",
+       "price": 1.99
+      },
+      {
+       "freq": 2,
+       "name": "Add Two Eggs",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Roasted Potatoes",
+       "price": 1.0
+      },
+      {
+       "freq": 1,
+       "name": "Egg Whites",
+       "price": 0.0
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "One Pork Chop",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 6,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Texas Toast",
+       "price": 0.99
+      },
+      {
+       "freq": 3,
+       "name": "Onions",
+       "price": 0.25
+      }
+     ],
+     "set": "Entree Add"
+    }
+   ]
+  },
+  {
+   "name": "One Pork Chop & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Onion Rings",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Open-Faced Roast Beef",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 5,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Texas Toast",
+       "price": 0.99
+      }
+     ],
+     "set": "Entree Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "French Bread",
+       "price": 0.0
+      }
+     ],
+     "set": "Entree NO"
+    }
+   ]
+  },
+  {
+   "name": "Orange Juice",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Orange Soda (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "PCC & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "PCC Breading",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Pancake Special",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 67,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 11,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 7,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      },
+      {
+       "freq": 4,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Bell Peppers",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Tomatoes",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Spinach",
+       "price": 1.25
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Patty Melt",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 7,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Add Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 2,
+       "name": "Add Jalapeno",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Mushroom",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Pickles",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Add Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Plain & Dry",
+       "price": 0.0
+      }
+     ],
+     "set": "Sandwich Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 16,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Pickles",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Avocado",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Swiss Chee",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "American Chee",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Bacon",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Lettuce",
+       "price": 0.0
+      }
+     ],
+     "set": "Sandwich No"
+    }
+   ]
+  },
+  {
+   "name": "Peanut Butter",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Pepsi (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Pinto Beans",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Potato Chip Chicken",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Potato Chip Chicken Strips",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Potato Chips",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Potato Salad",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Quesadilla",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 17,
+       "name": "No Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "No Hashbrowns",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "No Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "No Meat",
+       "price": 0.0
+      }
+     ],
+     "set": "Quesadilla NO"
+    }
+   ]
+  },
+  {
+   "name": "Ray Special",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 7,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 6,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 1,
+       "name": "Mushroom",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Refried Beans",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Ribeye Steak",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Roasted Potatoes",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Rumplemints",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Salmon Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Add Jalapeno",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.25
+      }
+     ],
+     "set": "Salad Extras"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad No"
+    }
+   ]
+  },
+  {
+   "name": "Sauce",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Sausage",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Sausage & Cheese Omelette",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 3,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 3,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 3,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 2,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Bell Peppers",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Add Two Eggs",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.75
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "Sausage (1)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Sautee Veggies",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Screw Driver",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Orange",
+       "price": 0.0
+      }
+     ],
+     "set": "Garnish"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Rocks",
+       "price": 0.0
+      }
+     ],
+     "set": "Prep"
+    }
+   ]
+  },
+  {
+   "name": "Shirley Temple",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Shrimp Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Boiled Egg",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Feta Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Red Onions",
+       "price": 0.0
+      }
+     ],
+     "set": "(D) Salad No"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Avocado",
+       "price": 2.5
+      }
+     ],
+     "set": "Salad Extras"
+    }
+   ]
+  },
+  {
+   "name": "Side Cream Cheese",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Side Jalapenos",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Side Pico De Gallo",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Side Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Cheese",
+       "price": 0.25
+      }
+     ],
+     "set": "Salad Add"
+    }
+   ]
+  },
+  {
+   "name": "Sierra Mist (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Sinful Chicken Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 10,
+       "name": "Sub Pepperjack Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 5,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 4,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Extra Pickle",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Sub Cheddar Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Extra Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 1,
+       "name": "Sub American Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "Sinful ADD"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 60,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 24,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 23,
+       "name": "Avocado",
+       "price": 0.0
+      },
+      {
+       "freq": 21,
+       "name": "Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 19,
+       "name": "Bacon",
+       "price": 0.0
+      },
+      {
+       "freq": 12,
+       "name": "Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "Sinful NO"
+    }
+   ]
+  },
+  {
+   "name": "Sirloin Steak",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Sirloin Steak & Eggs",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Sirloin Steak & Shrimp",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Small Rancheros",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Smiley Pancakes (K)",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Sour Cream",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Southwest Chicken",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Spanish Omelet",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Bell Peppers",
+       "price": 1.0
+      },
+      {
+       "freq": 2,
+       "name": "Jalape\u00f1os",
+       "price": 0.25
+      },
+      {
+       "freq": 2,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 1,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 1,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.75
+      }
+     ],
+     "set": "Omelette ADD"
+    }
+   ]
+  },
+  {
+   "name": "Steamed Broccoli",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Steamed Spinach",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Sweet Ice Tea (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Sweet Potato Fries",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Syrup",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Taco Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 6,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 5,
+       "name": "Sour Cream",
+       "price": 0.25
+      },
+      {
+       "freq": 4,
+       "name": "Cheese",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Taco Meat",
+       "price": 2.5
+      },
+      {
+       "freq": 3,
+       "name": "Croutons",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Cucumbers",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Lettuce",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Tomatoes",
+       "price": 0.25
+      }
+     ],
+     "set": "Salad Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 14,
+       "name": "Red Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 10,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 8,
+       "name": "Sour Cream",
+       "price": 0.0
+      },
+      {
+       "freq": 4,
+       "name": "Salsa",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Taco Meat",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Cheese",
+       "price": 0.0
+      }
+     ],
+     "set": "Taco Salad NO"
+    }
+   ]
+  },
+  {
+   "name": "Tator Tots",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Texas Peach Tea",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Rocks",
+       "price": 0.0
+      }
+     ],
+     "set": "Prep"
+    }
+   ]
+  },
+  {
+   "name": "Texas Scrambler",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Titos",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Bloody Mary",
+       "price": 0.0
+      }
+     ],
+     "set": "How"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 3,
+       "name": "Orange Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Cranberry Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Grapefruit Juice",
+       "price": 0.0
+      }
+     ],
+     "set": "Mixer"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Mix",
+       "price": 1.0
+      }
+     ],
+     "set": "Prep"
+    }
+   ]
+  },
+  {
+   "name": "Toast",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Tomato Juice",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Tomato Slices",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Topo Chico",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Tropical Salmon",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Tuna Salad Salad",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Avocado",
+       "price": 2.5
+      }
+     ],
+     "set": "Salad Add"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Red Onions",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad No"
+    }
+   ]
+  },
+  {
+   "name": "Tuna Salad Sandwich",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 4,
+       "name": "Tomatoes",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Mayo",
+       "price": 0.0
+      }
+     ],
+     "set": "Salad Sandwich NO"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Lettuce",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Pickles",
+       "price": 0.75
+      },
+      {
+       "freq": 1,
+       "name": "Add Jalapeno",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "DOUBLE MEAT",
+       "price": 2.0
+      },
+      {
+       "freq": 1,
+       "name": "Mayo",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Mustard",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Swiss Chee",
+       "price": 0.6
+      }
+     ],
+     "set": "Sandwich Add"
+    }
+   ]
+  },
+  {
+   "name": "Turkey",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Two Pork Chops",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 12,
+       "name": "Brown Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Cream Gravy",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "French Bread",
+       "price": 0.99
+      },
+      {
+       "freq": 1,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 1,
+       "name": "Texas Toast",
+       "price": 0.99
+      }
+     ],
+     "set": "Entree Add"
+    }
+   ]
+  },
+  {
+   "name": "Two Pork Chops & Eggs",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Unsweet Ice Tea (Refill)",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Veggie Beef Soup Bowl",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Veggie Beef Soup Cup",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Veggie Omelet",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 18,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 16,
+       "name": "Bacon",
+       "price": 2.0
+      },
+      {
+       "freq": 13,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 13,
+       "name": "Egg Whites",
+       "price": 0.0
+      },
+      {
+       "freq": 13,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 12,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 9,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 8,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 6,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 6,
+       "name": "Ham $",
+       "price": 2.5
+      },
+      {
+       "freq": 5,
+       "name": "Bell Peppers",
+       "price": 1.0
+      },
+      {
+       "freq": 3,
+       "name": "Broccoli",
+       "price": 1.0
+      },
+      {
+       "freq": 3,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 3,
+       "name": "Onions",
+       "price": 0.75
+      },
+      {
+       "freq": 2,
+       "name": "Add Two Eggs",
+       "price": 2.5
+      },
+      {
+       "freq": 2,
+       "name": "Chicken",
+       "price": 2.99
+      },
+      {
+       "freq": 2,
+       "name": "Tomatoes",
+       "price": 0.75
+      }
+     ],
+     "set": "Omelette ADD"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 38,
+       "name": "Mushroom",
+       "price": 0.0
+      },
+      {
+       "freq": 26,
+       "name": "Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 18,
+       "name": "Bell Peppers",
+       "price": 0.0
+      },
+      {
+       "freq": 18,
+       "name": "Onions",
+       "price": 0.0
+      },
+      {
+       "freq": 16,
+       "name": "Tomatoes",
+       "price": 0.0
+      }
+     ],
+     "set": "Veg Omlt NO"
+    }
+   ]
+  },
+  {
+   "name": "Veggie Plate",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Veracruz Tilapia",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Waffle",
+   "observed": true,
+   "sets": []
+  },
+  {
+   "name": "Waffle Special",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 37,
+       "name": "Add Cheese To Egg",
+       "price": 0.75
+      },
+      {
+       "freq": 15,
+       "name": "Add Egg",
+       "price": 1.5
+      },
+      {
+       "freq": 11,
+       "name": "Onions",
+       "price": 0.25
+      },
+      {
+       "freq": 6,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 5,
+       "name": "Bell Peppers",
+       "price": 0.75
+      },
+      {
+       "freq": 4,
+       "name": "Add Two Eggs",
+       "price": 3.0
+      },
+      {
+       "freq": 1,
+       "name": "Tomatoes",
+       "price": 0.25
+      }
+     ],
+     "set": "Egg Add On"
+    }
+   ]
+  },
+  {
+   "name": "Well Vodka",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 1,
+       "name": "Lime",
+       "price": 0.0
+      }
+     ],
+     "set": "Garnish"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 5,
+       "name": "Grapefruit Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 3,
+       "name": "Tonic",
+       "price": 0.0
+      },
+      {
+       "freq": 2,
+       "name": "Sprite",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Orange Juice",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Tomato Juice",
+       "price": 0.0
+      }
+     ],
+     "set": "Mixer"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 2,
+       "name": "Salt",
+       "price": 0.0
+      }
+     ],
+     "set": "Rim Choice"
+    }
+   ]
+  },
+  {
+   "name": "Western Omelet",
+   "observed": true,
+   "sets": [
+    {
+     "modifiers": [
+      {
+       "freq": 20,
+       "name": "Mushroom",
+       "price": 0.75
+      },
+      {
+       "freq": 13,
+       "name": "Sausage",
+       "price": 2.0
+      },
+      {
+       "freq": 8,
+       "name": "Bacon",
+       "price": 1.99
+      },
+      {
+       "freq": 7,
+       "name": "Add Egg",
+       "price": 1.25
+      },
+      {
+       "freq": 7,
+       "name": "Avocado",
+       "price": 2.5
+      },
+      {
+       "freq": 7,
+       "name": "Jalape\u00f1os",
+       "price": 0.75
+      },
+      {
+       "freq": 7,
+       "name": "Spinach",
+       "price": 1.0
+      },
+      {
+       "freq": 5,
+       "name": "Add Two Eggs",
+       "price": 2.5
+      },
+      {
+       "freq": 4,
+       "name": "Tomatoes",
+       "price": 0.25
+      },
+      {
+       "freq": 3,
+       "name": "Bell Peppers",
+       "price": 1.0
+      },
+      {
+       "freq": 3,
+       "name": "Cheese",
+       "price": 0.6
+      },
+      {
+       "freq": 3,
+       "name": "Roasted Potatoes",
+       "price": 1.0
+      },
+      {
+       "freq": 2,
+       "name": "Chorizo",
+       "price": 1.99
+      },
+      {
+       "freq": 1,
+       "name": "Egg Whites",
+       "price": 0.0
+      },
+      {
+       "freq": 1,
+       "name": "Ham $",
+       "price": 2.5
+      }
+     ],
+     "set": "Omelette ADD"
+    },
+    {
+     "modifiers": [
+      {
+       "freq": 18,
+       "name": "Cheese",
+       "price": 0.0
+      },
+      {
+       "freq": 17,
+       "name": "Bell Peppers",
+       "price": 0.0
+      },
+      {
+       "freq": 9,
+       "name": "Ham",
+       "price": 0.0
+      },
+      {
+       "freq": 8,
+       "name": "Onions",
+       "price": 0.0
+      }
+     ],
+     "set": "Western Omlt NO"
+    }
+   ]
+  },
+  {
+   "name": "Whole Jalapeno",
+   "observed": false,
+   "sets": []
+  },
+  {
+   "name": "Whole Pepper",
+   "observed": false,
+   "sets": []
+  }
+ ],
+ "schema": 1,
+ "unparsed_modifiers": []
+}

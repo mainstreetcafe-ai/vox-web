@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { supabase } from '@/lib/supabase'
 import { API_CONFIG } from '@/lib/constants'
-import type { Ticket, OrderType } from '@/types'
+import type { Ticket, OrderType, TicketItem } from '@/types'
 import type { StaffMember } from '@/contexts/AuthContext'
 import { parseTicketUtterance } from '@/services/ticketParser'
 
@@ -158,12 +158,37 @@ export function useTicket(staff: StaffMember | null) {
     setStatusText('')
   }, [])
 
+  /** Button path: add an item without speech. Modifier categories are unknown from
+   *  a tap (the grammar knows the SET, not our 4-way category enum), so they land as
+   *  'side' -- the neutral bucket -- and the text is preserved verbatim for the POS. */
+  const addItemManually = useCallback((
+    name: string,
+    quantity: number,
+    modifiers: string[] = [],
+    seat = 0,
+  ) => {
+    setTicket(prev => {
+      if (!prev || prev.status !== 'building') return prev
+      const item: TicketItem = {
+        seat,
+        quantity,
+        menuItemName: name,
+        menuItemPrice: null,
+        modifiers: modifiers.map(text => ({ text, category: 'side' as const })),
+        rawUtterance: `[tap] ${quantity > 1 ? quantity + ' x ' : ''}${name}` +
+          (modifiers.length ? ` -- ${modifiers.join(', ')}` : ''),
+      }
+      return { ...prev, items: [...prev.items, item] }
+    })
+  }, [])
+
   return {
     ticket,
     isActive,
     isOpen,
     statusText,
     startTicket,
+    addItemManually,
     processUtterance,
     sendTicket,
     markDone,

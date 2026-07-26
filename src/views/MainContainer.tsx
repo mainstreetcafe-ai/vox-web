@@ -59,7 +59,11 @@ export function MainContainer() {
         <div className="pt-2">
         <PageIndicator pageCount={3} currentPage={page} />
         {!isOnline && (
-          <p className="text-warning text-[10px] text-center mt-1">Offline</p>
+          <div className="mx-4 mt-1 rounded-lg bg-warning/10 border border-warning/30 px-3 py-1.5">
+            <p className="text-warning text-[11px] text-center leading-snug">
+              Offline -- buttons still work. Voice notes save to the Feed and retry.
+            </p>
+          </div>
         )}
         </div>
       </div>

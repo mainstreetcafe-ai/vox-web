@@ -89,6 +89,7 @@ export function LoginView() {
       <div className="h-5 mb-4">
         {isLoading && <p className="text-gray text-[13px]">Checking...</p>}
         {!isLoading && displayError && <p className="text-error text-[13px]">{displayError}</p>}
+        {!isLoading && !displayError && <p className="text-gray text-[13px]">Enter your PIN</p>}
       </div>
 
       {/* Number pad */}

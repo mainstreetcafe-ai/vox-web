@@ -14,8 +14,13 @@ export function elapsedMinutes(isoString: string): number {
 
 export function formatElapsed(isoString: string): string {
   const mins = elapsedMinutes(isoString)
-  if (mins >= 60) return `${Math.floor(mins / 60)}h ${mins % 60}m`
-  return `${mins}m`
+  if (mins < 60) return `${mins}m`
+  const hours = Math.floor(mins / 60)
+  // A dine-in session never runs a full day. Past 24h the underlying table_session
+  // row is stale (never closed), so show days -- an obviously-wrong "87d" a server
+  // ignores -- instead of a plausible-looking, alarming "2088h 21m".
+  if (hours >= 24) return `${Math.floor(hours / 24)}d (stale)`
+  return `${hours}h ${mins % 60}m`
 }
 
 export function shiftContextLine(shiftStart: Date): string {

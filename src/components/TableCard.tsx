@@ -3,6 +3,7 @@ import { formatElapsed } from '@/lib/time'
 
 interface Props {
   table: TableSession
+  onTap?: (table: TableSession) => void
 }
 
 const borderColorMap = {
@@ -12,11 +13,16 @@ const borderColorMap = {
   open: 'bg-gray-dim',
 }
 
-export function TableCard({ table }: Props) {
+export function TableCard({ table, onTap }: Props) {
   const isOccupied = table.status === 'active' || table.status === 'attention'
 
   return (
-    <div className="bg-surface rounded-xl overflow-hidden flex">
+    <div
+      onClick={() => onTap?.(table)}
+      className={`bg-surface rounded-xl overflow-hidden flex ${
+        onTap ? 'active:bg-surface-hover cursor-pointer' : ''
+      }`}
+    >
       {/* Left border accent */}
       <div className={`w-1 shrink-0 ${borderColorMap[table.status]}`} />
 
@@ -41,7 +47,7 @@ export function TableCard({ table }: Props) {
           )}
 
           {table.status === 'open' && (
-            <p className="text-gray-dim text-xs mt-0.5">Open / unsat</p>
+            <p className="text-gray-dim text-xs mt-0.5">Open</p>
           )}
         </div>
 
