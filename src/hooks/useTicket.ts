@@ -1,16 +1,56 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
-import { API_CONFIG } from '@/lib/constants'
 import type { Ticket, OrderType, TicketItem } from '@/types'
 import type { StaffMember } from '@/contexts/AuthContext'
 import { parseTicketUtterance } from '@/services/ticketParser'
+import { enqueue, flushQueue, isQueued, markDoneWhenSynced } from '@/services/ticketQueue'
 
 // Phase 1 (notepad): no auto-cancel while building, no auto-clear after save.
 // Server explicitly cancels or taps "Done" after entering into SHIFT4.
+//
+// Offline posture (2026-07-27): a dictated ticket is CAPTURED the moment it
+// exists here. Sends go through the localStorage queue (services/ticketQueue),
+// so a dead tailnet reads as "saved on phone -- waiting for network", never as
+// a failed dictation. The in-progress draft persists across a reload
+// (store+sync pairing: local write is the truth, the relayed row converges).
+
+const DRAFT_KEY = 'vox_draft_ticket_v1'
+
+function loadDraft(): (Ticket & { id?: string }) | null {
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY)
+    if (!raw) return null
+    const t = JSON.parse(raw) as Ticket & { id?: string }
+    return (t.status === 'building' || t.status === 'sent') ? t : null
+  } catch { return null }
+}
 
 export function useTicket(staff: StaffMember | null) {
-  const [ticket, setTicket] = useState<(Ticket & { id?: string }) | null>(null)
+  const [ticket, setTicket] = useState<(Ticket & { id?: string }) | null>(loadDraft)
   const [statusText, setStatusText] = useState('')
+
+  // store half of the pairing: every ticket change lands in localStorage first
+  useEffect(() => {
+    try {
+      if (ticket) localStorage.setItem(DRAFT_KEY, JSON.stringify(ticket))
+      else localStorage.removeItem(DRAFT_KEY)
+    } catch { /* quota */ }
+  }, [ticket])
+
+  // echo reconciliation: when the queue syncs our localKey, adopt the server id
+  useEffect(() => {
+    const onSynced = (e: Event) => {
+      const { localKey, id } = (e as CustomEvent<{ localKey: string; id: string }>).detail
+      setTicket(prev => {
+        if (!prev || prev.localKey !== localKey) return prev
+        return { ...prev, id, pendingSync: false }
+      })
+      setStatusText(prev =>
+        prev.startsWith('Saved on phone') ? 'Saved -- enter in SHIFT4, then tap Done' : prev)
+    }
+    window.addEventListener('vox-ticket-synced', onSynced)
+    return () => window.removeEventListener('vox-ticket-synced', onSynced)
+  }, [])
 
   // True while the server is dictating items into this ticket.
   const isActive = ticket !== null && ticket.status === 'building'
@@ -33,6 +73,7 @@ export function useTicket(staff: StaffMember | null) {
       items: [],
       status: 'building',
       createdAt: new Date().toISOString(),
+      localKey: crypto.randomUUID(),
     })
     setStatusText(`${tableNumber.toUpperCase()} -- ${guestCount} guests`)
   }, [staff])
@@ -90,67 +131,71 @@ export function useTicket(staff: StaffMember | null) {
     }
   }, [ticket])
 
-  // Save the ticket to vox_tickets and keep it on screen so the server can
-  // read it on the walk back to the POS terminal. Status stays 'sent' until
-  // the server taps Done.
+  // Save the ticket and keep it on screen so the server can read it on the
+  // walk back to the POS terminal. Status stays 'sent' until the server taps
+  // Done. The write goes THROUGH the queue: captured locally first, synced to
+  // vox_tickets when the network allows. Returns true whenever the ticket is
+  // captured -- a dead tailnet is a sync state, not a failed dictation.
   const sendTicket = useCallback(async (): Promise<boolean> => {
     if (!ticket || !staff) return false
 
     const checkTotal = ticket.items.reduce(
       (sum, i) => sum + (i.menuItemPrice ?? 0) * i.quantity, 0,
     )
+    const localKey = ticket.localKey ?? crypto.randomUUID()
 
-    const { data, error } = await supabase
-      .from('vox_tickets')
-      .insert({
-        restaurant_id: API_CONFIG.restaurantId,
-        table_number: ticket.tableNumber,
-        server_id: ticket.serverId,
-        server_name: ticket.serverName,
-        guest_count: ticket.guestCount,
-        order_type: ticket.orderType,
-        items: ticket.items,
-        status: 'sent',
-      })
-      .select('id')
-      .single()
+    enqueue({
+      kind: 'create',
+      localKey,
+      queuedAt: new Date().toISOString(),
+      tableNumber: ticket.tableNumber,
+      serverId: ticket.serverId,
+      serverName: ticket.serverName,
+      guestCount: ticket.guestCount,
+      orderType: ticket.orderType,
+      items: ticket.items,
+      checkTotal,
+    })
+    // optimistic: the ticket is 'sent' the moment it is captured locally
+    setTicket(prev => prev ? { ...prev, localKey, status: 'sent', pendingSync: true } : null)
+    setStatusText('Saved on phone -- syncing')
 
-    if (error || !data) {
-      setStatusText('Failed to save ticket')
-      return false
+    await flushQueue() // resolves the vox-ticket-synced echo on success
+
+    // if the entry is still queued the sync failed -- say so, visibly
+    if (isQueued(localKey)) {
+      setStatusText('Saved on phone -- offline, will sync (ticket is safe)')
     }
-
-    // Mirror item count + estimated total onto the table session for the
-    // dashboard, but do not post to the feed and do not call any n8n/Telegram
-    // webhook -- Phase 1 is a notepad, SHIFT4 is the system of record.
-    await supabase
-      .from('vox_table_sessions')
-      .update({ item_count: ticket.items.length, check_total: checkTotal })
-      .eq('restaurant_id', API_CONFIG.restaurantId)
-      .eq('table_number', ticket.tableNumber)
-
-    setTicket(prev => prev ? { ...prev, id: data.id as string, status: 'sent' } : null)
-    setStatusText('Saved -- enter in SHIFT4, then tap Done')
-
     return true
   }, [ticket, staff])
 
   // Server taps Done after entering the order into SHIFT4. We mark the row
   // 'done' for the dashboard's "Today's tickets" list, then clear the screen.
+  // Offline-safe: an unsynced ticket flips to done at sync time; a failed
+  // update is queued rather than silently dropped (the old fire-and-forget
+  // here was a decision-without-effect hole).
   const markDone = useCallback(async (): Promise<void> => {
-    if (!ticket || !ticket.id) {
-      setTicket(null)
-      setStatusText('')
-      return
-    }
-
-    await supabase
-      .from('vox_tickets')
-      .update({ status: 'done', status_changed_at: new Date().toISOString() })
-      .eq('id', ticket.id)
-
+    const t = ticket
     setTicket(null)
     setStatusText('')
+    if (!t) return
+
+    if (!t.id) {
+      // never synced -- tell the queue to create it directly as done
+      if (t.localKey) markDoneWhenSynced(t.localKey)
+      void flushQueue()
+      return
+    }
+    try {
+      const { error } = await supabase
+        .from('vox_tickets')
+        .update({ status: 'done', status_changed_at: new Date().toISOString() })
+        .eq('id', t.id)
+      if (error) throw error
+    } catch {
+      enqueue({ kind: 'mark_done', localKey: t.localKey ?? crypto.randomUUID(),
+                queuedAt: new Date().toISOString(), ticketId: t.id })
+    }
   }, [ticket])
 
   const cancelTicket = useCallback(() => {

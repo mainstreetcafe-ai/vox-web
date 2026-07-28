@@ -5,6 +5,8 @@ import { Haptics } from '@/lib/haptics'
 import { SpeechService } from '@/services/speechService'
 import { parseCommand } from '@/services/commandParser'
 import { classifyTranscript, CLASSIFY_CONFIDENCE_THRESHOLD } from '@/services/classifyService'
+import { grammarSync } from '@/services/grammar'
+import { repairTranscript, describeRepairs, vocabFor } from '@/services/repair'
 import { executeCommand, type ExecutorContext } from '@/services/commandExecutor'
 import { logCommand, flagCommandWrong } from '@/services/commandLogger'
 import { useAuth, type StaffMember } from '@/contexts/AuthContext'
@@ -123,7 +125,7 @@ export function useCommandState() {
     }, 300)
   }, [clearDismissTimer])
 
-  const processTranscript = useCallback(async (transcript: string) => {
+  const processTranscript = useCallback(async (rawTranscript: string) => {
     setState('processing')
     Haptics.medium()
 
@@ -133,6 +135,20 @@ export function useCommandState() {
       setShowResponse(true)
       setState('responding')
       return
+    }
+
+    // Deterministic transcript repair BEFORE anything parses (offline, against
+    // the bundled grammar). Every repair is visible: the transcription line
+    // updates to what we USED, annotated with what we HEARD -- a repaired
+    // utterance must never read as if the server said it.
+    let transcript = rawTranscript
+    const grammar = grammarSync()
+    if (grammar) {
+      const r = repairTranscript(rawTranscript, vocabFor(grammar))
+      if (r.changed) {
+        transcript = r.text
+        setTranscription(`${r.text}  (${describeRepairs(r)})`)
+      }
     }
 
     const t = ticketRef.current

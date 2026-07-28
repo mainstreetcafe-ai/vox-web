@@ -6,21 +6,41 @@ import { CommandView } from './CommandView'
 import { FeedView } from './FeedView'
 import { Haptics } from '@/lib/haptics'
 import { loadMenu } from '@/services/menuSearch'
+import { loadGrammar } from '@/services/grammar'
 import { postShiftBriefingIfNeeded } from '@/services/briefing'
+import { installFlushTriggers, queueLength } from '@/services/ticketQueue'
 
 export function MainContainer() {
   const [page, setPage] = useState(1) // 0=Dashboard, 1=Command, 2=Feed
   const [isOnline, setIsOnline] = useState(navigator.onLine)
+  const [queued, setQueued] = useState(queueLength())
 
-  // Load menu from Supabase (with localStorage fallback) and post the daily
-  // VIP briefing on first staff login of the day. The briefing is delayed so
-  // the Feed's realtime subscription has time to establish; otherwise the
-  // INSERT can land before SUBSCRIBED and the briefing never reaches the UI
-  // until the next refetch (race observed in pilot on 2026-05-29).
+  // Load menu from Supabase (with localStorage fallback), warm the bundled
+  // grammar (transcript repair + pickers need it at startup, not first-tap),
+  // and post the daily VIP briefing on first staff login of the day. The
+  // briefing is delayed so the Feed's realtime subscription has time to
+  // establish; otherwise the INSERT can land before SUBSCRIBED and the
+  // briefing never reaches the UI until the next refetch (race observed in
+  // pilot on 2026-05-29).
   useEffect(() => {
     loadMenu()
+    loadGrammar()
     const t = setTimeout(() => { postShiftBriefingIfNeeded() }, 1500)
     return () => clearTimeout(t)
+  }, [])
+
+  // Offline ticket queue: standing flush triggers (online/visible/interval) +
+  // live queued-count for the banner. A queued ticket is visible state, never
+  // a silent hole.
+  useEffect(() => {
+    const uninstall = installFlushTriggers()
+    const onQueue = (e: Event) =>
+      setQueued((e as CustomEvent<{ length: number }>).detail.length)
+    window.addEventListener('vox-queue-changed', onQueue)
+    return () => {
+      uninstall()
+      window.removeEventListener('vox-queue-changed', onQueue)
+    }
   }, [])
 
   // Listen for online/offline
@@ -58,10 +78,13 @@ export function MainContainer() {
       <div className="pt-[env(safe-area-inset-top,20px)] shrink-0">
         <div className="pt-2">
         <PageIndicator pageCount={3} currentPage={page} />
-        {!isOnline && (
+        {(!isOnline || queued > 0) && (
           <div className="mx-4 mt-1 rounded-lg bg-warning/10 border border-warning/30 px-3 py-1.5">
-            <p className="text-warning text-[11px] text-center leading-snug">
-              Offline -- buttons still work. Voice notes save to the Feed and retry.
+            <p className="text-warning text-[11px] text-center leading-snug" role="status">
+              {!isOnline
+                ? 'Offline -- buttons still work. Tickets save on the phone and sync when back.'
+                : `Syncing ${queued} saved ticket${queued === 1 ? '' : 's'}...`}
+              {!isOnline && queued > 0 && ` ${queued} ticket${queued === 1 ? '' : 's'} waiting.`}
             </p>
           </div>
         )}

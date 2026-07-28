@@ -88,6 +88,12 @@ export interface Ticket {
   items: TicketItem[]
   status: TicketStatus
   createdAt: string
+  /** Client-side identity, minted at startTicket. The sync queue reconciles the
+   *  server row id onto this key after an offline send (echo reconciliation). */
+  localKey?: string
+  /** True while the ticket is captured locally but not yet in vox_tickets --
+   *  rendered as "saved on phone, waiting for network", never as a failure. */
+  pendingSync?: boolean
 }
 
 // --- KDS (Kitchen Display System) types ---
