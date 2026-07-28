@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/repo-guards.mjs",
     "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
+    "guards": "node scripts/repo-guards.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

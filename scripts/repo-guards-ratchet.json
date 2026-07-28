@@ -1,0 +1,27 @@
+{
+  "sizes": {},
+  "px-text": {
+    "src/App.tsx": 1,
+    "src/components/BreathingRing.tsx": 2,
+    "src/components/ItemPicker.tsx": 14,
+    "src/components/KDSCard.tsx": 1,
+    "src/components/MessageCard.tsx": 1,
+    "src/components/QuickActions.tsx": 8,
+    "src/components/RecentTicketsList.tsx": 3,
+    "src/components/ResponseCard.tsx": 3,
+    "src/components/TableCard.tsx": 3,
+    "src/components/TicketView.tsx": 1,
+    "src/views/CommandView.tsx": 5,
+    "src/views/DashboardView.tsx": 11,
+    "src/views/FeedView.tsx": 5,
+    "src/views/LoginView.tsx": 4,
+    "src/views/MainContainer.tsx": 1
+  },
+  "formatters": {
+    "src/components/ItemPicker.tsx": 1,
+    "src/components/TableCard.tsx": 1,
+    "src/components/TicketView.tsx": 1,
+    "src/services/commandExecutor.ts": 7,
+    "src/views/DashboardView.tsx": 3
+  }
+}
