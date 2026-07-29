@@ -223,14 +223,25 @@ export function useCommandState() {
     if (parsed.intent === 'ticket_start') {
       const table = parsed.entities.table_number
       const guests = parseInt(parsed.entities.guest_count) || 2
-      t.startTicket(table, guests)
+      // startTicket refuses over a sent ticket awaiting Done (K3 F11) --
+      // announce the refusal, never a success that did not happen
+      const started = t.startTicket(table, guests)
       logCommand(
         parsed,
-        { text: `Ticket started: ${table}`, type: 'success', requiresConfirmation: false },
+        started
+          ? { text: `Ticket started: ${table}`, type: 'success', requiresConfirmation: false }
+          : { text: 'Open ticket awaiting Done -- close it first', type: 'error', requiresConfirmation: false },
         ctx.staff,
         source,
       ).then((id) => { if (id) lastCommandIdRef.current = id }).catch(() => {})
-      Haptics.success()
+      if (started) {
+        Haptics.success()
+      } else {
+        Haptics.error()
+        setResponse({ text: 'Open ticket awaiting Done -- close it first', type: 'error', requiresConfirmation: false })
+        setShowResponse(true)
+        dismissTimer.current = setTimeout(dismissResponse, APP_CONFIG.responseDismissMs)
+      }
       setState('idle')
       return
     }
